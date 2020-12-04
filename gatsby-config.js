@@ -9,6 +9,7 @@ module.exports = {
     author: `@ljaph`,
   },
   plugins: [
+    "gatsby-plugin-styled-components",
     {
       resolve: `gatsby-source-prismic`,
       options: {
@@ -18,6 +19,7 @@ module.exports = {
 
         schemas: {
           page: require("./src/schemas/page.json"),
+          navigation: require("./src/schemas/navigation_links.json"),
         },
       },
     },

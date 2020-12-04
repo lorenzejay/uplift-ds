@@ -1,6 +1,7 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
+import { RichText } from "prismic-reactjs"
 
 export const query = graphql`
   query pageQuery($uid: String!) {
@@ -8,6 +9,11 @@ export const query = graphql`
       uid
       data {
         page_title {
+          html
+          raw
+          text
+        }
+        content {
           html
           raw
           text
@@ -21,10 +27,12 @@ export default function Pages(props) {
   const {
     data: { prismicPage },
   } = props
-  console.log(prismicPage)
+
+  //use the raw object in rich text
   return (
-    <>
-      <h1>{prismicPage.data.page_title.text}</h1>
-    </>
+    <Layout>
+      <RichText render={prismicPage.data.page_title.raw} />
+      <RichText render={prismicPage.data.content.raw} />
+    </Layout>
   )
 }

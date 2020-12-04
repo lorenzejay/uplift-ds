@@ -1,49 +1,89 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
+import { useStaticQuery, graphql, Link } from "gatsby"
+import styled from "styled-components"
 import "./layout.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
+    query NavQuery {
+      allPrismicNavigation {
+        edges {
+          node {
+            data {
+              branding
+              navigation_links {
+                label
+                link {
+                  document {
+                    ... on PrismicPage {
+                      uid
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
   `)
+  const MainWrapper = styled.main`
+    max-width: 800px;
+    margin: 0 auto;
+  `
+  const Header = styled.header`
+    height: 8vh;
+    display: flex;
+    background: black;
+    padding: 0 16px;
+    align-items: center;
+  `
+  const NavLinks = styled.div`
+    margin-left: auto;
+    display: flex;
+  `
+  const NavLink = styled.div`
+    a {
+      color: white;
+      padding: 0 16px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
 
+      &:hover {
+        color: orange;
+        text-decoration: underline;
+      }
+    }
+  `
+  const Branding = styled.div`
+    color: orange;
+    font-weight: bold;
+    margin: auto 0;
+    font-size: 18px;
+  `
+
+  const navigationLinks =
+    data.allPrismicNavigation.edges[0].node.data.navigation_links
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
+      <Header>
+        <Branding>
+          {data.allPrismicNavigation.edges[0].node.data.branding}
+        </Branding>
+        <NavLinks>
+          {navigationLinks.map(link => {
+            console.log(link.link.document)
+            return (
+              <NavLink key={link.link.document.uid}>
+                <Link to={`/${link.link.document.uid}`}>{link.label}</Link>
+              </NavLink>
+            )
+          })}
+        </NavLinks>
+      </Header>
+      <MainWrapper>{children}</MainWrapper>
     </>
   )
 }
