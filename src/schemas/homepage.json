@@ -1,0 +1,40 @@
+{
+  "Main": {
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {
+          "hero": []
+        },
+        "choices": {
+          "hero": {
+            "type": "Slice",
+            "fieldset": "Hero",
+            "description": "Full screen Component (Main)",
+            "icon": "airplay",
+            "display": "list",
+            "non-repeat": {
+              "hero_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "Hero title",
+                  "placeholder": "Hero Title"
+                }
+              },
+              "hero_content": {
+                "type": "Text",
+                "config": {
+                  "label": "Hero Content",
+                  "placeholder": "Hero Content (Description)"
+                }
+              }
+            },
+            "repeat": {}
+          }
+        }
+      }
+    }
+  }
+}

@@ -74,7 +74,6 @@ const Layout = ({ children }) => {
         </Branding>
         <NavLinks>
           {navigationLinks.map(link => {
-            console.log(link.link.document)
             return (
               <NavLink key={link.link.document.uid}>
                 <Link to={`/${link.link.document.uid}`}>{link.label}</Link>

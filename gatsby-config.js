@@ -21,6 +21,7 @@ module.exports = {
         schemas: {
           page: require("./src/schemas/page.json"),
           navigation: require("./src/schemas/navigation_links.json"),
+          homepage: require("./src/schemas/homepage.json"),
         },
       },
     },
