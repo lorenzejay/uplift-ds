@@ -29,6 +29,14 @@
                   "label": "Hero Content",
                   "placeholder": "Hero Content (Description)"
                 }
+              },
+              "background_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Background Image"
+                }
               }
             },
             "repeat": {}

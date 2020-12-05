@@ -21,6 +21,9 @@ const IndexPage = props => {
                       raw
                       text
                     }
+                    background_image {
+                      url
+                    }
                   }
                 }
               }
