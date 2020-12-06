@@ -26,6 +26,32 @@ const IndexPage = props => {
                     }
                   }
                 }
+                ... on PrismicHomepageBodyCallToActionGrid {
+                  id
+                  primary {
+                    section_title {
+                      html
+                      raw
+                      text
+                    }
+                  }
+                  slice_type
+                  items {
+                    button_label
+                    button_destination {
+                      raw
+                    }
+                    call_to_action_title {
+                      raw
+                    }
+                    content {
+                      raw
+                    }
+                    featured_image {
+                      url
+                    }
+                  }
+                }
               }
             }
           }
