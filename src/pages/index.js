@@ -40,6 +40,7 @@ const IndexPage = props => {
                     button_label
                     button_destination {
                       raw
+                      slug
                     }
                     call_to_action_title {
                       raw
@@ -50,6 +51,24 @@ const IndexPage = props => {
                     featured_image {
                       url
                     }
+                  }
+                }
+                ... on PrismicHomepageBodyPriceList {
+                  slice_type
+                  primary {
+                    title1 {
+                      raw
+                    }
+                  }
+                  items {
+                    price_list_title {
+                      raw
+                    }
+                    price_list_description {
+                      raw
+                    }
+                    price_of_service
+                    price_type
                   }
                 }
               }

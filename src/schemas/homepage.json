@@ -1,12 +1,21 @@
 {
   "Main": {
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "Title",
+        "placeholder": "title"
+      }
+    },
     "body": {
       "type": "Slices",
       "fieldset": "Slice zone",
       "config": {
         "labels": {
           "hero": [],
-          "call_to_action_grid": []
+          "call_to_action_grid": [],
+          "price_list": []
         },
         "choices": {
           "hero": {
@@ -97,6 +106,56 @@
                   "customtypes": ["page"],
                   "label": "Button Destination",
                   "placeholder": "Button Destination"
+                }
+              }
+            }
+          },
+          "price_list": {
+            "type": "Slice",
+            "fieldset": "Price List",
+            "description": "A Card Section of pricing options",
+            "icon": "attach_money",
+            "display": "list",
+            "non-repeat": {
+              "title1": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "Title",
+                  "placeholder": "title"
+                }
+              }
+            },
+            "repeat": {
+              "price_list_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "Price List Title",
+                  "placeholder": "Price List Title"
+                }
+              },
+              "price_list_description": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+                  "label": "Price List Description",
+                  "placeholder": "Price List Description"
+                }
+              },
+              "price_of_service": {
+                "type": "Number",
+                "config": {
+                  "label": "Price of service",
+                  "placeholder": "Price of service"
+                }
+              },
+              "price_type": {
+                "type": "Select",
+                "config": {
+                  "options": ["Most Popular"],
+                  "label": "Price Type",
+                  "placeholder": "Price Type"
                 }
               }
             }

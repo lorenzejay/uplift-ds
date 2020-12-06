@@ -4,12 +4,12 @@ import { RichText } from "prismic-reactjs"
 import styled from "styled-components"
 import CallToActionBlock from "../callToActionBlock"
 
-const CallToActionGrid = ({ callToActions, title }) => {
-  const CallToActionGridWrapper = styled.section`
-    max-width: 800px;
-    margin: 10vh auto;
-  `
+const CallToActionGridWrapper = styled.section`
+  max-width: 800px;
+  margin: 10vh auto;
+`
 
+const CallToActionGrid = ({ callToActions, title }) => {
   console.log(callToActions)
   return (
     <CallToActionGridWrapper>
