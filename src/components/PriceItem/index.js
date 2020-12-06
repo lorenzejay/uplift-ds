@@ -3,40 +3,62 @@ import React from "react"
 import styled from "styled-components"
 
 const PricingCardWrapper = styled.div`
+  border-radius: 10px;
   flex-grow: 1;
   flex-basis: 0;
-  margin: 0 10px;
-  padding: 10px;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  background: ${p => (p.mostPopular ? "orange" : "eee")};
-  color: ${p => (p.mostPopular ? "white" : "#333333")};
-  padding: 10px;
-  position: relative;
-  .most-popular {
+  align-items: center;
+  /* background: ${p => (p.mostPopular ? "orange" : "eee")};
+  color: ${p => (p.mostPopular ? "white" : "#333333")}; */
+  /* height: ${p => (p.mostPopular ? "100vh" : "85vh")};
+  padding: ${p => (p.mostPopular ? "calc(40px + 7.5vh) 0" : "40px 0")}; */
+  text-align: center;
+
+  /* .most-popular {
     position: absolute;
+    width: 100%;
     right: 0;
     top: 0;
-    padding: 5px;
     background: green;
     color: white;
     font-weight: bold;
-  }
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  } */
   .price {
     font-size: 30px;
-    padding: 10px 0;
     text-align: center;
-    margin: auto -10px;
+    .price,
+    .description {
+      padding: 5%;
+    }
     span {
       font-size: 12px;
     }
     p {
-      background: #676767;
-      color: white;
       padding: 8px 0;
     }
   }
   .description {
-    margin-top: 20px;
+    margin-top: 30px;
+    height: 40vh;
+    align-items: center;
+    p {
+      font-size: 14px;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 3vh;
+    }
+    li {
+      list-style: none;
+      font-size: 16px;
+    }
+    li::before {
+      content: "✓  ";
+    }
   }
 `
 
@@ -45,16 +67,16 @@ const PriceItem = ({ price, features, title, mostPopular }) => {
 
   return (
     <PricingCardWrapper mostPopular={mostPopular}>
-      {mostPopular && <div className="most-popular">Most Popular</div>}
+      {/* {mostPopular && <div className="most-popular">Most Popular</div>} */}
       <RichText render={title} />
+      <div className="description">
+        <RichText render={features} />
+      </div>
       <div className="price">
         <p>
           {price === 0 ? "Free" : `$${price}`}{" "}
           {price > 0 && <span>/month</span>}
         </p>
-      </div>
-      <div className="description">
-        <RichText render={features} />
       </div>
     </PricingCardWrapper>
   )

@@ -4,11 +4,14 @@ import styled from "styled-components"
 import PriceItem from "../PriceItem"
 
 const PriceListWrapper = styled.section`
-  max-width: 800px;
+  max-width: 950px;
   margin: 10vh auto;
 
   .price-list-card-row:last-child {
     display: flex;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 5% 1% 0;
   }
 `
 
