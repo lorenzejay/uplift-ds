@@ -58,11 +58,7 @@ const Layout = ({ children }) => {
               navigation_links {
                 label
                 link {
-                  document {
-                    ... on PrismicPage {
-                      uid
-                    }
-                  }
+                  uid
                 }
               }
             }
@@ -74,6 +70,7 @@ const Layout = ({ children }) => {
 
   const navigationLinks =
     data.allPrismicNavigation.edges[0].node.data.navigation_links
+  console.log(navigationLinks)
   return (
     <>
       <Header>
@@ -85,14 +82,11 @@ const Layout = ({ children }) => {
         <NavLinks>
           {navigationLinks.map(link => {
             return (
-              <NavLink key={link.link.document.uid}>
-                <Link to={`/${link.link.document.uid}`}>{link.label}</Link>
+              <NavLink key={link.link.uid}>
+                <Link to={`/${link.link.uid}`}>{link.label}</Link>
               </NavLink>
             )
           })}
-          <NavLink>
-            <Link to="/contact-us">Contact</Link>
-          </NavLink>
         </NavLinks>
       </Header>
       <MainWrapper>{children}</MainWrapper>

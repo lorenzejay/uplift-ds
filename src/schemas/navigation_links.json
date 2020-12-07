@@ -11,7 +11,7 @@
       "type": "Link",
       "config": {
         "select": "document",
-        "customtypes": ["page"],
+        "customtypes": ["page", "homepage"],
         "label": "Page Link",
         "placeholder": "Page Link"
       }
@@ -31,7 +31,7 @@
             "type": "Link",
             "config": {
               "select": "document",
-              "customtypes": ["page"],
+              "customtypes": ["page", "contact_page"],
               "label": "Link",
               "placeholder": "Link"
             }
