@@ -1,0 +1,58 @@
+{
+  "Main": {
+    "page_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "Page Title",
+        "placeholder": "Page Title"
+      }
+    },
+    "description": {
+      "type": "Text",
+      "config": {
+        "label": "description",
+        "placeholder": "Short Description"
+      }
+    },
+    "page_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Page Image"
+      }
+    },
+    "form_fields": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "field_name": {
+            "type": "Text",
+            "config": {
+              "label": "Field Name",
+              "placeholder": "Field Name"
+            }
+          },
+          "field_type": {
+            "type": "Select",
+            "config": {
+              "options": ["text", "email", "textarea"],
+              "label": "Field Type",
+              "placeholder": "Field Type"
+            }
+          },
+          "required": {
+            "type": "Select",
+            "config": {
+              "options": ["Yes", "No"],
+              "label": "Required",
+              "placeholder": "Required?"
+            }
+          }
+        },
+        "label": "Form Fields"
+      }
+    }
+  }
+}
