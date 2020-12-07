@@ -127,6 +127,14 @@
               }
             },
             "repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Image"
+                }
+              },
               "price_list_title": {
                 "type": "StructuredText",
                 "config": {

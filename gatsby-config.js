@@ -1,3 +1,5 @@
+const { TRUE } = require("node-sass")
+
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
@@ -67,6 +69,15 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `#333333`,
+        // Disable the loading spinner.
+        showSpinner: true,
       },
     },
     `gatsby-transformer-sharp`,

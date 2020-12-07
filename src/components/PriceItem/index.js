@@ -6,25 +6,11 @@ const PricingCardWrapper = styled.div`
   border-radius: 10px;
   flex-grow: 1;
   flex-basis: 0;
-  align-items: center;
-  /* background: ${p => (p.mostPopular ? "orange" : "eee")};
-  color: ${p => (p.mostPopular ? "white" : "#333333")}; */
-  /* height: ${p => (p.mostPopular ? "100vh" : "85vh")};
-  padding: ${p => (p.mostPopular ? "calc(40px + 7.5vh) 0" : "40px 0")}; */
   text-align: center;
+  img {
+    width: 150px;
+  }
 
-  /* .most-popular {
-    position: absolute;
-    width: 100%;
-    right: 0;
-    top: 0;
-    background: green;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-  } */
   .price {
     font-size: 30px;
     text-align: center;
@@ -62,19 +48,17 @@ const PricingCardWrapper = styled.div`
   }
 `
 
-const PriceItem = ({ price, features, title, mostPopular }) => {
-  console.log("most popular", mostPopular)
-
+const PriceItem = ({ price, features, title, mostPopular, image }) => {
   return (
-    <PricingCardWrapper mostPopular={mostPopular}>
-      {/* {mostPopular && <div className="most-popular">Most Popular</div>} */}
+    <PricingCardWrapper>
+      <img src={image} />
       <RichTextCustom render={title} />
       <div className="description">
         <RichTextCustom render={features} />
       </div>
       <div className="price">
         <p>
-          {price === 0 ? "Free" : `$${price}`}{" "}
+          {price === 0 ? "Free" : `$${price}`}
           {price > 0 && <span>/month</span>}
         </p>
       </div>
