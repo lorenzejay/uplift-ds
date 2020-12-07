@@ -24,12 +24,40 @@ module.exports = {
       options: {
         repositoryName: `ljaph-Gatsby-prismic-example`,
         accessToken: `${process.env.PRISMIC_API_KEY}`,
-        linkResolver: ({ node, key, value }) => page => `/${page.uid}`,
+        linkResolver: ({ node, key, value }) => doc => {
+          // Your link resolver
+          if (doc.type === "category") {
+            return `/category/${doc.uid}`
+          }
 
+          // URL for a product type
+          if (doc.type === "product") {
+            return `/product/${doc.uid}`
+          }
+
+          // URL for a page type
+          if (doc.type === "page") {
+            return `/${doc.uid}`
+          }
+
+          // Backup for all other types
+          return "/"
+        },
         schemas: {
+          contact_page: require("./src/schemas/contact_page.json"),
           page: require("./src/schemas/page.json"),
           navigation: require("./src/schemas/navigation_links.json"),
           homepage: require("./src/schemas/homepage.json"),
+        },
+        imageImgixParams: {
+          auto: "compress,format",
+          fit: "max",
+          q: 50,
+        },
+        imagePlaceholderImgixParams: {
+          w: 100,
+          blur: 15,
+          q: 50,
         },
       },
     },

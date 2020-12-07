@@ -1,7 +1,7 @@
-import { RichText } from "prismic-reactjs"
 import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
+import RichTextCustom from "../richText"
 
 const CallToActionBlockWrapper = styled.section`
   padding: 20px;
@@ -46,16 +46,16 @@ const CallToActionBlock = ({
 }) => {
   return (
     <CallToActionBlockWrapper>
-      <RichText render={title} />
+      <RichTextCustom render={title} />
       <div className="call-to-action-content">
-        <RichText render={content} />
+        <RichTextCustom render={content} />
         <div className="featured-image-wrapper">
           <img src={image} alt="featured" />
         </div>
       </div>
 
       <Button>
-        <Link to={buttonDestination}>{buttonLabel}</Link>
+        <Link to={`/${buttonDestination}`}>{buttonLabel}</Link>
       </Button>
     </CallToActionBlockWrapper>
   )

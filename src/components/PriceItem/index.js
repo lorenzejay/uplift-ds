@@ -1,6 +1,6 @@
-import { RichText } from "prismic-reactjs"
 import React from "react"
 import styled from "styled-components"
+import RichTextCustom from "../richText"
 
 const PricingCardWrapper = styled.div`
   border-radius: 10px;
@@ -68,9 +68,9 @@ const PriceItem = ({ price, features, title, mostPopular }) => {
   return (
     <PricingCardWrapper mostPopular={mostPopular}>
       {/* {mostPopular && <div className="most-popular">Most Popular</div>} */}
-      <RichText render={title} />
+      <RichTextCustom render={title} />
       <div className="description">
-        <RichText render={features} />
+        <RichTextCustom render={features} />
       </div>
       <div className="price">
         <p>

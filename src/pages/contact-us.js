@@ -4,7 +4,8 @@ import Layout from "../components/layout"
 import TextField from "@material-ui/core/TextField"
 import { makeStyles } from "@material-ui/core/styles"
 import styled from "styled-components"
-import { RichText } from "prismic-reactjs"
+import RichTextCustom from "../components/richText"
+import linkResolver from "../utils/linkResolver"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -19,11 +20,11 @@ const ContactWrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin: 10vh auto;
+  margin: 0 auto;
 `
 
 const Form = styled.form`
-  padding: 3%;
+  padding: 2% 3%;
   margin: 20px;
   display: flex;
   align-items: flex-start;
@@ -77,23 +78,31 @@ const ContactImage = styled.img`
 
 const ContactUs = () => {
   const data = useStaticQuery(graphql`
-    {
+    query MyQuery {
       allPrismicContactPage {
         edges {
           node {
             data {
-              description
+              page_title {
+                html
+                text
+                raw
+              }
+              page_image {
+                alt
+                copyright
+                url
+                thumbnails
+              }
               form_fields {
                 field_name
                 field_type
                 required
               }
-              page_title {
+              description {
+                html
+                raw
                 text
-                type
-              }
-              page_image {
-                url
               }
             }
           }
@@ -106,11 +115,29 @@ const ContactUs = () => {
   return (
     <Layout>
       <ContactWrapper>
-        <Form className={classes.root}>
-          <h1>
-            {data.allPrismicContactPage.edges[0].node.data.page_title[0].text}
-          </h1>
-          <p>{data.allPrismicContactPage.edges[0].node.data.description}</p>
+        <Form
+          className={classes.root}
+          onSubmit={e => e.preventDefault()}
+          method="post"
+          netlify-honeypot="bot-field"
+          data-netlify="true"
+          name="contact"
+        >
+          <input type="hidden" name="bot-field" />
+          <input type="hidden" name="form-name" value="contact" />
+          <RichTextCustom
+            render={
+              data.allPrismicContactPage.edges[0].node.data.page_title.raw
+            }
+          />
+
+          <RichTextCustom
+            render={
+              data.allPrismicContactPage.edges[0].node.data.description.raw
+            }
+            linkResolver={linkResolver}
+          />
+
           {data.allPrismicContactPage.edges[0].node.data.form_fields.map(
             (item, i) => {
               return (

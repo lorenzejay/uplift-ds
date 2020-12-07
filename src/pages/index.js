@@ -39,7 +39,7 @@ const IndexPage = props => {
                   items {
                     button_label
                     button_destination {
-                      raw
+                      uid
                       slug
                     }
                     call_to_action_title {

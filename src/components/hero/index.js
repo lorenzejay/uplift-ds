@@ -1,5 +1,5 @@
 import React from "react"
-import { RichText } from "prismic-reactjs"
+import RichTextCustom from "../richText"
 import styled from "styled-components"
 
 const HeroWrapper = styled.section`
@@ -26,7 +26,7 @@ const Hero = ({ title, content, backgroundImage }) => {
   return (
     <HeroWrapper backgroundImage={backgroundImage}>
       <div>
-        <RichText render={title.raw} />
+        <RichTextCustom render={title.raw} />
         <p>{content}</p>
       </div>
     </HeroWrapper>
