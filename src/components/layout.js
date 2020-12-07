@@ -37,6 +37,14 @@ const Branding = styled.div`
   font-weight: bold;
   margin: auto 0;
   font-size: 18px;
+  a {
+    color: white;
+    padding: 0 16px;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
 `
 
 const Layout = ({ children }) => {
@@ -70,7 +78,9 @@ const Layout = ({ children }) => {
     <>
       <Header>
         <Branding>
-          {data.allPrismicNavigation.edges[0].node.data.branding}
+          <Link to="/">
+            {data.allPrismicNavigation.edges[0].node.data.branding}
+          </Link>
         </Branding>
         <NavLinks>
           {navigationLinks.map(link => {
@@ -80,6 +90,9 @@ const Layout = ({ children }) => {
               </NavLink>
             )
           })}
+          <NavLink>
+            <Link to="/contact-us">Contact</Link>
+          </NavLink>
         </NavLinks>
       </Header>
       <MainWrapper>{children}</MainWrapper>
