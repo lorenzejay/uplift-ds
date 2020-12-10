@@ -1,5 +1,3 @@
-const { TRUE } = require("node-sass")
-
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
@@ -47,7 +45,6 @@ module.exports = {
         },
         schemas: {
           contact_page: require("./src/schemas/contact_page.json"),
-          page: require("./src/schemas/page.json"),
           navigation: require("./src/schemas/navigation_links.json"),
           homepage: require("./src/schemas/homepage.json"),
         },

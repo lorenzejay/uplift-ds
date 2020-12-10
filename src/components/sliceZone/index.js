@@ -1,5 +1,6 @@
 import React from "react"
-import CallToActionGrid from "../callToActionGrid"
+import CtaGrid from "../ctaGrid"
+import FeaturedGrid from "../featuredGrid"
 import Hero from "../hero"
 import PriceList from "../PriceList"
 import "./styles.scss"
@@ -8,7 +9,6 @@ const SliceZone = ({ body }) => {
   return (
     <div>
       {body.map((bodyContent, i) => {
-        // console.log(bodyContent)
         if (bodyContent.slice_type === "hero") {
           return (
             <Hero
@@ -18,12 +18,20 @@ const SliceZone = ({ body }) => {
               key={i}
             />
           )
-        } else if (bodyContent.slice_type === "call_to_action_grid") {
+        } else if (bodyContent.slice_type === "featured_grid") {
           return (
-            <CallToActionGrid
+            <FeaturedGrid
               key={i}
-              callToActions={bodyContent.items}
+              featuredItems={bodyContent.items}
               title={bodyContent.primary.section_title}
+            />
+          )
+        } else if (bodyContent.slice_type === "call_to_actions") {
+          return (
+            <CtaGrid
+              key={i}
+              title={bodyContent.primary.section_title}
+              ctaItems={bodyContent.items}
             />
           )
         } else if (bodyContent.slice_type === "price_list") {

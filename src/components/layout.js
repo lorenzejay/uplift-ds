@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
@@ -10,9 +10,11 @@ const MainWrapper = styled.main`
 const Header = styled.header`
   height: 10vh;
   display: flex;
-  background: black;
+  background: ${props => (props.srcolling ? "white" : "transparant")};
   padding: 0 16px;
   align-items: center;
+  position: fixed;
+  width: 100%;
 `
 const NavLinks = styled.div`
   margin-left: auto;
@@ -20,25 +22,23 @@ const NavLinks = styled.div`
 `
 const NavLink = styled.div`
   a {
-    color: white;
+    color: ${props => (props.scrolling ? "white" : "#333")};
     padding: 0 16px;
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
 
     &:hover {
-      color: orange;
+      color: red;
       text-decoration: underline;
     }
   }
 `
 const Branding = styled.div`
-  color: orange;
-  font-weight: bold;
   margin: auto 0;
-  font-size: 18px;
+
   a {
-    color: white;
+    color: ${props => (props.scrolling ? "white" : "#333")};
     padding: 0 16px;
     text-decoration: none;
     font-size: 24px;
@@ -48,6 +48,7 @@ const Branding = styled.div`
 `
 
 const Layout = ({ children }) => {
+  const [srcolling, setScrolling] = useState(false)
   const data = useStaticQuery(graphql`
     query NavQuery {
       allPrismicNavigation {
@@ -68,12 +69,21 @@ const Layout = ({ children }) => {
     }
   `)
 
+  useEffect(() => {
+    window.addEventListener("scroll", e => {
+      if (window.scrollY !== 0) {
+        setScrolling(true)
+      } else {
+        setScrolling(false)
+      }
+    })
+  })
+
   const navigationLinks =
     data.allPrismicNavigation.edges[0].node.data.navigation_links
-  console.log(navigationLinks)
   return (
     <>
-      <Header>
+      <Header srcolling={srcolling}>
         <Branding>
           <Link to="/">
             {data.allPrismicNavigation.edges[0].node.data.branding}

@@ -26,23 +26,36 @@ const IndexPage = props => {
                     }
                   }
                 }
-                ... on PrismicHomepageBodyCallToActionGrid {
+                ... on PrismicHomepageBodyCallToActions {
                   id
+                  slice_type
                   primary {
-                    section_title {
-                      html
+                    call_to_actions_title {
                       raw
-                      text
                     }
                   }
-                  slice_type
                   items {
-                    button_label
-                    button_destination {
-                      uid
-                      slug
+                    cta_section_title {
+                      raw
                     }
-                    call_to_action_title {
+                    cta_section_content {
+                      raw
+                    }
+                    cta_image {
+                      url
+                    }
+                  }
+                }
+                ... on PrismicHomepageBodyFeaturedGrid {
+                  id
+                  slice_type
+                  primary {
+                    section_title {
+                      raw
+                    }
+                  }
+                  items {
+                    feature_title {
                       raw
                     }
                     content {
@@ -53,6 +66,27 @@ const IndexPage = props => {
                     }
                   }
                 }
+                ... on PrismicHomepageBodyCallToActions {
+                  id
+                  slice_type
+                  primary {
+                    call_to_actions_title {
+                      raw
+                    }
+                  }
+                  items {
+                    cta_section_title {
+                      raw
+                    }
+                    cta_section_content {
+                      raw
+                    }
+                    cta_image {
+                      url
+                    }
+                  }
+                }
+
                 ... on PrismicHomepageBodyPriceList {
                   slice_type
                   primary {

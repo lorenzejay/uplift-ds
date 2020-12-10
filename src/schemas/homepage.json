@@ -14,8 +14,9 @@
       "config": {
         "labels": {
           "hero": [],
-          "call_to_action_grid": [],
-          "price_list": []
+          "featured_grid": [],
+          "price_list": [],
+          "call_to_actions": []
         },
         "choices": {
           "hero": {
@@ -51,10 +52,10 @@
             },
             "repeat": {}
           },
-          "call_to_action_grid": {
+          "featured_grid": {
             "type": "Slice",
-            "fieldset": "Call to Action Grid",
-            "description": "Grid of CTA blocks",
+            "fieldset": "What We Do",
+            "description": "What do we offer",
             "icon": "grid_on",
             "display": "list",
             "non-repeat": {
@@ -76,11 +77,11 @@
                   "label": "Featured Image"
                 }
               },
-              "call_to_action_title": {
+              "feature_title": {
                 "type": "StructuredText",
                 "config": {
-                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
-                  "label": "Call to Action Title",
+                  "single": "heading3, heading4, heading5, heading6",
+                  "label": "Feature Title",
                   "placeholder": "Call to Action Title"
                 }
               },
@@ -90,22 +91,6 @@
                   "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
                   "label": "Content",
                   "placeholder": "Content"
-                }
-              },
-              "button_label": {
-                "type": "Text",
-                "config": {
-                  "label": "Button Label",
-                  "placeholder": "Button Label"
-                }
-              },
-              "button_destination": {
-                "type": "Link",
-                "config": {
-                  "select": "document",
-                  "customtypes": ["page"],
-                  "label": "Button Destination",
-                  "placeholder": "Button Destination"
                 }
               }
             }
@@ -164,6 +149,49 @@
                   "options": ["Most Popular"],
                   "label": "Price Type",
                   "placeholder": "Price Type"
+                }
+              }
+            }
+          },
+          "call_to_actions": {
+            "type": "Slice",
+            "fieldset": "Call to Actions",
+            "description": "Call to actions ",
+            "icon": "description",
+            "display": "list",
+            "non-repeat": {
+              "call_to_actions_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading2, heading3, heading4, heading5, heading6",
+                  "label": "Call to actions title",
+                  "placeholder": "CTA Title"
+                }
+              }
+            },
+            "repeat": {
+              "cta_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "CTA Image"
+                }
+              },
+              "cta_section_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading3, heading4, heading5, heading6",
+                  "label": "CTA Section Title",
+                  "placeholder": "Section Title"
+                }
+              },
+              "cta_section_content": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+                  "label": "CTA Section Content",
+                  "placeholder": "Section Content"
                 }
               }
             }
