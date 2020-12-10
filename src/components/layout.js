@@ -8,9 +8,10 @@ const MainWrapper = styled.main`
   margin: 0 auto;
 `
 const Header = styled.header`
+  z-index: 100;
   height: 10vh;
   display: flex;
-  background: ${props => (props.srcolling ? "white" : "transparant")};
+  background: ${props => (props.srcolling ? "white" : "transparent")};
   padding: 0 16px;
   align-items: center;
   position: fixed;

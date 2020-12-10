@@ -23,6 +23,10 @@ const IndexPage = props => {
                     }
                     background_image {
                       url
+                      fluid(maxWidth: 1920) {
+                        src
+                        srcSet
+                      }
                     }
                   }
                 }
