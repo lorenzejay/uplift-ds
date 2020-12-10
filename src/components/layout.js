@@ -8,7 +8,7 @@ const MainWrapper = styled.main`
   margin: 0 auto;
 `
 const Header = styled.header`
-  height: 8vh;
+  height: 10vh;
   display: flex;
   background: black;
   padding: 0 16px;

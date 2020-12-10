@@ -51,7 +51,7 @@ const PricingCardWrapper = styled.div`
 const PriceItem = ({ price, features, title, mostPopular, image }) => {
   return (
     <PricingCardWrapper>
-      <img src={image} />
+      <img src={image} alt={features} />
       <RichTextCustom render={title} />
       <div className="description">
         <RichTextCustom render={features} />

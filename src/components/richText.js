@@ -1,7 +1,7 @@
 import React from "react"
 import { Link as PrismicLink, RichText } from "prismic-reactjs"
 import { Link } from "gatsby"
-import { linkResolver } from "../utils/linkResolver"
+import linkResolver from "../utils/linkResolver"
 
 const htmlSerializer = (type, element, content, children, index) => {
   // Generate links to Prismic Documents as <Link> components

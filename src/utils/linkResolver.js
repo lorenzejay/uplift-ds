@@ -1,4 +1,4 @@
-export const linkResolver = doc => {
+const linkResolver = doc => {
   // URL for a category type
   if (doc.type === "category") {
     return `/category/${doc.uid}`
@@ -17,3 +17,5 @@ export const linkResolver = doc => {
   // Backup for all other types
   return "/"
 }
+
+export default linkResolver
