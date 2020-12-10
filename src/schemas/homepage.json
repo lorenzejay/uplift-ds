@@ -16,7 +16,8 @@
           "hero": [],
           "featured_grid": [],
           "price_list": [],
-          "call_to_actions": []
+          "call_to_actions": [],
+          "testimonials": []
         },
         "choices": {
           "hero": {
@@ -192,6 +193,56 @@
                   "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
                   "label": "CTA Section Content",
                   "placeholder": "Section Content"
+                }
+              }
+            }
+          },
+          "testimonials": {
+            "type": "Slice",
+            "fieldset": "Testimonials",
+            "description": "What our clients say about us.",
+            "icon": "art_track",
+            "display": "list",
+            "non-repeat": {
+              "testimonial_section_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading2",
+                  "label": "Testimonial Section Title",
+                  "placeholder": "Section Title"
+                }
+              }
+            },
+            "repeat": {
+              "author_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "author_image"
+                }
+              },
+              "testimonial_author": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading4",
+                  "label": "Testimonial Author",
+                  "placeholder": "Author of the testimonial"
+                }
+              },
+              "testimonial_content": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, strong, em, hyperlink",
+                  "label": "Testimonial content",
+                  "placeholder": "Testimonial Content"
+                }
+              },
+              "author_job": {
+                "type": "Text",
+                "config": {
+                  "label": "Author job",
+                  "placeholder": "Occupation of author"
                 }
               }
             }

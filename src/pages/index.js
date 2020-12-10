@@ -90,6 +90,28 @@ const IndexPage = props => {
                     }
                   }
                 }
+                ... on PrismicHomepageBodyTestimonials {
+                  id
+                  slice_type
+                  primary {
+                    testimonial_section_title {
+                      raw
+                    }
+                  }
+                  items {
+                    author_job
+                    testimonial_author {
+                      raw
+                    }
+                    testimonial_content {
+                      raw
+                    }
+
+                    author_image {
+                      url
+                    }
+                  }
+                }
 
                 ... on PrismicHomepageBodyPriceList {
                   slice_type

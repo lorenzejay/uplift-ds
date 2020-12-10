@@ -11,10 +11,10 @@ const Header = styled.header`
   z-index: 100;
   height: 10vh;
   display: flex;
-  background: ${props => (props.srcolling ? "white" : "transparent")};
+  position: ${props => (props.scrolling ? "fixed" : "relative")};
+  background: ${props => (props.scrolling ? "transparent" : "white")};
   padding: 0 16px;
   align-items: center;
-  position: fixed;
   width: 100%;
 `
 const NavLinks = styled.div`
@@ -49,7 +49,8 @@ const Branding = styled.div`
 `
 
 const Layout = ({ children }) => {
-  const [srcolling, setScrolling] = useState(false)
+  const [scrolling, setScrolling] = useState(false)
+  const [scrollPosition, setScrollPosition] = useState(0)
   const data = useStaticQuery(graphql`
     query NavQuery {
       allPrismicNavigation {
@@ -79,12 +80,19 @@ const Layout = ({ children }) => {
       }
     })
   })
+  // useEffect(() => {
+  //   console.log(window.scrollY)
+  //   if (window.scrollY !== 0) {
+  //     setScrollPosition(window.scrollY)
+  //   }
+  // })
 
   const navigationLinks =
     data.allPrismicNavigation.edges[0].node.data.navigation_links
+
   return (
     <>
-      <Header srcolling={srcolling}>
+      <Header scrolling={scrolling}>
         <Branding>
           <Link to="/">
             {data.allPrismicNavigation.edges[0].node.data.branding}

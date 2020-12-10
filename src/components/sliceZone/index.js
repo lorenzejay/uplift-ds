@@ -3,6 +3,7 @@ import CtaGrid from "../ctaGrid"
 import FeaturedGrid from "../featuredGrid"
 import Hero from "../hero"
 import PriceList from "../PriceList"
+import Testimonials from "../testimonials"
 import "./styles.scss"
 const SliceZone = ({ body }) => {
   console.log(body)
@@ -32,6 +33,13 @@ const SliceZone = ({ body }) => {
               key={i}
               title={bodyContent.primary.section_title}
               ctaItems={bodyContent.items}
+            />
+          )
+        } else if (bodyContent.slice_type === "testimonials") {
+          return (
+            <Testimonials
+              title={bodyContent.primary.testimonial_section_title}
+              testimonials={bodyContent.items}
             />
           )
         } else if (bodyContent.slice_type === "price_list") {
