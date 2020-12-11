@@ -17,6 +17,7 @@ const Header = styled.header`
   padding: 0 16px;
   align-items: center;
   width: 100%;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 `
 const NavLinks = styled.div`
   margin-left: auto;

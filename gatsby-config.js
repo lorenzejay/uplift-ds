@@ -47,6 +47,8 @@ module.exports = {
           contact_page: require("./src/schemas/contact_page.json"),
           navigation: require("./src/schemas/navigation_links.json"),
           homepage: require("./src/schemas/homepage.json"),
+          blog_homepage: require("./src/schemas/blog_homepage.json"),
+          blog_post: require("./src/schemas/blog_post.json"),
         },
         imageImgixParams: {
           auto: "compress,format",

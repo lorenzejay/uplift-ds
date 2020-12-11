@@ -92,7 +92,6 @@ const ContactUs = () => {
                 alt
                 copyright
                 url
-                thumbnails
               }
               form_fields {
                 field_name
