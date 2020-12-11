@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
 import "./layout.css"
+import Footer from "./footer"
 
 const MainWrapper = styled.main`
   margin: 0 auto;
@@ -108,6 +109,7 @@ const Layout = ({ children }) => {
         </NavLinks>
       </Header>
       <MainWrapper>{children}</MainWrapper>
+      <Footer />
     </>
   )
 }
