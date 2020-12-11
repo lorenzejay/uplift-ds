@@ -7,13 +7,21 @@ const TestimonialWrapper = styled.section`
   padding: 5%;
 `
 const TestimonialCard = styled.div`
-  padding: 2%;
+  width: 70%;
+  padding: 5% 0;
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
+
   align-items: flex-start;
   justify-content: flex-start;
   border-bottom: 1px solid #333;
+`
+const TestimonialProfile = styled.div`
+  width: 17vw;
+
+  h5 {
+    margin-top: 3vh;
+  }
 `
 const ImageCropper = styled.div`
   width: 75px;
@@ -34,12 +42,14 @@ const TestimonialImgAndQuote = styled.div`
   gap: 10vw;
   width: 100%;
   flex-direction: row;
+  align-items: center;
   p {
     width: 75%;
     margin: auto 0;
   }
 `
 const TestimonialAuthorAndLink = styled.div`
+  margin-top: 25px;
   h5 {
     margin: 0;
   }
@@ -57,16 +67,18 @@ const Testimonials = ({ title, testimonials }) => {
         return (
           <TestimonialCard key={i} index={i}>
             <TestimonialImgAndQuote>
-              <ImageCropper>
-                <img src={item.author_image.url} alt={"testimonial writer"} />
-              </ImageCropper>
+              <TestimonialProfile>
+                <ImageCropper>
+                  <img src={item.author_image.url} alt={"testimonial writer"} />
+                </ImageCropper>
+                <TestimonialAuthorAndLink>
+                  <RichTextCustom render={item.testimonial_author.raw} />
+                  <p>{item.author_job}</p>
+                </TestimonialAuthorAndLink>
+              </TestimonialProfile>
 
               <RichTextCustom render={item.testimonial_content.raw} />
             </TestimonialImgAndQuote>
-            <TestimonialAuthorAndLink>
-              <RichTextCustom render={item.testimonial_author.raw} />
-              <p>{item.author_job}</p>
-            </TestimonialAuthorAndLink>
           </TestimonialCard>
         )
       })}

@@ -3,7 +3,7 @@ import RichTextCustom from "../richText"
 import styled from "styled-components"
 import BackgroundImage from "gatsby-background-image"
 const HeroWrapper = styled(BackgroundImage)`
-  height: calc(100vh - 10vh);
+  height: 80vh;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -13,13 +13,13 @@ const HeroWrapper = styled(BackgroundImage)`
   text-align: center;
   color: white;
 
-  div {
+  /* div {
     max-width: 800px;
     margin: 0 auto;
-    background: rgba(0, 0, 0, 0.5);
     padding: 2%;
+    background: rgba(0, 0, 0, 0.5);
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  }
+  } */
 `
 const Hero = ({ title, content, backgroundImage, className }) => {
   return (

@@ -5,13 +5,21 @@ import RichTextCustom from "../richText"
 const CtaWrapper = styled.section`
   width: 100%;
   padding: 5%;
+  background: #ea6354;
 `
 const CtaCard = styled.div`
   margin: 3vh 0;
   display: flex;
   flex-direction: ${props => (props.index % 2 === 0 ? "row" : "row-reverse")};
   align-items: center;
+  justify-content: space-around;
+  gap: 5vw;
   .cta-card-text {
+    h3,
+    h4,
+    p {
+      color: white;
+    }
     h4::before {
       content: "🚀  ";
     }
@@ -35,7 +43,7 @@ const CtaGrid = ({ title, ctaItems }) => {
             <img
               src={item.cta_image.url}
               alt={item.cta_section_title.raw}
-              style={{ width: 550 }}
+              style={{ width: 400, height: 325, borderRadius: 25 }}
             />
           </CtaCard>
         )

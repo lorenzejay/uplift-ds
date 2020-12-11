@@ -11,8 +11,8 @@ const Header = styled.header`
   z-index: 100;
   height: 10vh;
   display: flex;
-  position: ${props => (props.scrolling ? "fixed" : "relative")};
-  background: ${props => (props.scrolling ? "transparent" : "white")};
+  position: relative;
+  background: white;
   padding: 0 16px;
   align-items: center;
   width: 100%;
@@ -23,14 +23,13 @@ const NavLinks = styled.div`
 `
 const NavLink = styled.div`
   a {
-    color: ${props => (props.scrolling ? "white" : "#333")};
+    color: #333;
     padding: 0 16px;
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
 
     &:hover {
-      color: red;
       text-decoration: underline;
     }
   }
@@ -39,7 +38,7 @@ const Branding = styled.div`
   margin: auto 0;
 
   a {
-    color: ${props => (props.scrolling ? "white" : "#333")};
+    color: #333;
     padding: 0 16px;
     text-decoration: none;
     font-size: 24px;
