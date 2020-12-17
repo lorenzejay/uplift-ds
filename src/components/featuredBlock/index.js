@@ -7,8 +7,8 @@ const FeaturedBlockWrapper = styled.section`
   padding: 20px;
   background: #fff;
   margin: 20px 0;
-  border-radius: 5px;
-  height: 55vh;
+  border-radius: 10px;
+  height: 65vh;
   width: 23vw;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   display: flex;

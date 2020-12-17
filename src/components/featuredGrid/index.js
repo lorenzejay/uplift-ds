@@ -10,10 +10,9 @@ const FeaturedSectionWrapper = styled.section`
   margin: 0 auto;
 `
 const FeaturedGrid3 = styled.section`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 `
 
 const FeaturedGrid = ({ featuredItems, title }) => {
