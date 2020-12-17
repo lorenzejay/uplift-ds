@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import { graphql, useStaticQuery } from "gatsby"
 import RichTextCustom from "../components/richText"
 import styled from "styled-components"
+import BackgroundImage from "gatsby-background-image"
 
 export const query = graphql`
   query BlogPostQuery($uid: String!) {
@@ -35,6 +36,9 @@ export const query = graphql`
             primary {
               image {
                 url
+                fluid {
+                  src
+                }
               }
             }
           }
@@ -51,26 +55,36 @@ const BlogPostWrapper = styled.section`
   flex-direction: column;
   align-items: center;
 `
+const BlogPostHeader = styled.div`
+  display: flex;
+`
 
 export default function BlogPosts(props) {
   const {
     data: { prismicBlogPost },
   } = props
   console.log(prismicBlogPost)
-  //   const blogPostData = props.data.allPrismicBlogPost.edges[0].node.data
-  //   console.log(props.data.allPrismicBlogPost.edges[0].node.data.body)
+
   return (
     <Layout>
       <BlogPostWrapper>
-        <RichTextCustom render={prismicBlogPost.data.title.raw} />
-        <p>{prismicBlogPost.data.release_date}</p>
+        <BlogPostHeader>
+          <div>
+            <RichTextCustom render={prismicBlogPost.data.title.raw} />
+            <p>{prismicBlogPost.data.release_date}</p>
+          </div>
+          <img
+            src={prismicBlogPost.data.body[0].primary.image.url}
+            style={{ width: "50%" }}
+          />
+        </BlogPostHeader>
         <div>
           <RichTextCustom
-            render={prismicBlogPost.data.body[0].primary.text.raw}
+            render={prismicBlogPost.data.body[1].primary.text.raw}
           />
-          <RichTextCustom
+          {/* <RichTextCustom
             render={prismicBlogPost.data.body[1].primary.quote.raw}
-          />
+          /> */}
         </div>
       </BlogPostWrapper>
     </Layout>
