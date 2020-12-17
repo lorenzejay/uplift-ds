@@ -116,11 +116,12 @@ const ContactUs = () => {
       <ContactWrapper>
         <Form
           className={classes.root}
-          onSubmit={e => e.preventDefault()}
           method="post"
           netlify-honeypot="bot-field"
           data-netlify="true"
           name="contact"
+          action="/contact-success"
+          onSubmit={e => e.preventDefault()}
         >
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
