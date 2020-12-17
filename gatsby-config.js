@@ -1,7 +1,7 @@
 require("dotenv").config({
   path: `.env`,
 })
-const path = require("path")
+
 module.exports = {
   siteMetadata: {
     title: `Uplift Digital Solutions`,
@@ -23,7 +23,7 @@ module.exports = {
       resolve: `gatsby-source-prismic`,
       options: {
         repositoryName: `upliftds`,
-        accessToken: `${process.env.PRISMIC_API_KEY}`,
+
         linkResolver: ({ node, key, value }) => doc => {
           // Your link resolver
           if (doc.type === "category") {
