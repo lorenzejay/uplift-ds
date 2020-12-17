@@ -4,9 +4,9 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby-Prismic Example`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@ljaph`,
+    title: `Uplift Digital Solutions`,
+    description: `Digital Solutions for Businesses | Web Design and Development, Content Management, and Search Engine Optimization. Educational Blogs for business owners on why your digital prescence is important.`,
+    author: `Lorenze Jay`,
   },
   plugins: [
     `gatsby-plugin-sass`,
@@ -22,7 +22,7 @@ module.exports = {
     {
       resolve: `gatsby-source-prismic`,
       options: {
-        repositoryName: `ljaph-Gatsby-prismic-example`,
+        repositoryName: `upliftds`,
         accessToken: `${process.env.PRISMIC_API_KEY}`,
         linkResolver: ({ node, key, value }) => doc => {
           // Your link resolver
