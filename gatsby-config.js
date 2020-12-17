@@ -1,7 +1,7 @@
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env`,
 })
-
+const path = require("path")
 module.exports = {
   siteMetadata: {
     title: `Uplift Digital Solutions`,
