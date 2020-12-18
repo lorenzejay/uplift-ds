@@ -3,17 +3,10 @@ import "./styles.scss"
 import RichTextCustom from "../richText"
 import styled from "styled-components"
 import FeaturedBlock from "../featuredBlock"
-
-const FeaturedSectionWrapper = styled.section`
-  width: 100%;
-  padding: 5%;
-  margin: 0 auto;
-`
-const FeaturedGrid3 = styled.section`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-`
+import {
+  FeaturedGrid3,
+  FeaturedSectionWrapper,
+} from "../../styles/featured_styles"
 
 const FeaturedGrid = ({ featuredItems, title }) => {
   return (
