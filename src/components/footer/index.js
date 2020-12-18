@@ -60,7 +60,7 @@ const Footer = () => {
         </SocialWrapper>
 
         <SocialWrapper>
-          <a href="https://www.instagram.com/lorenzejay.tech/">
+          <a href="https://www.instagram.com/uplift.digitalsolutions/">
             <RiInstagramFill />
           </a>
         </SocialWrapper>

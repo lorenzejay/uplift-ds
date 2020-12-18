@@ -14,7 +14,7 @@ const Header = styled.header`
   display: flex;
   position: relative;
   background: white;
-  padding: 0 16px;
+  padding: 0 5%;
   align-items: center;
   width: 100%;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);

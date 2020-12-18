@@ -6,6 +6,9 @@ const CtaWrapper = styled.section`
   width: 100%;
   padding: 5%;
   background: #ea6354;
+  h2 {
+    color: white;
+  }
 `
 const CtaCard = styled.div`
   margin: 3vh 0;
@@ -30,9 +33,9 @@ const CtaCard = styled.div`
 `
 
 const CtaGrid = ({ title, ctaItems }) => {
-  console.log(ctaItems)
   return (
     <CtaWrapper>
+      <RichTextCustom render={title} />
       {ctaItems.map((item, i) => {
         return (
           <CtaCard key={i} index={i}>
@@ -43,7 +46,7 @@ const CtaGrid = ({ title, ctaItems }) => {
             <img
               src={item.cta_image.url}
               alt={item.cta_section_title.raw}
-              style={{ width: 400, height: 325, borderRadius: 25 }}
+              style={{ width: 400, height: 325, borderRadius: 10 }}
             />
           </CtaCard>
         )

@@ -31,7 +31,7 @@ const SliceZone = ({ body }) => {
           return (
             <CtaGrid
               key={i}
-              title={bodyContent.primary.section_title}
+              title={bodyContent.primary.call_to_actions_title.raw}
               ctaItems={bodyContent.items}
             />
           )

@@ -13,29 +13,41 @@ const HeroWrapper = styled.div`
   align-items: center;
   justify-content: flex-start;
   text-align: center;
-  color: white;
-  padding: 0 3%;
-  background: #ea6354;
+  color: #333;
+  padding: 0 5%;
+  background: #c6f3f8;
   gap: 5vw;
-  /* div {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2%;
-    background: rgba(0, 0, 0, 0.5);
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  } */
+  .hero-text {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.1rem;
+      width: 75%;
+      text-align: center;
+    }
+  }
+  button {
+    background: #ea6354;
+    a {
+      color: white;
+    }
+  }
 `
 const Hero = ({ title, content, backgroundImage, className }) => {
   return (
     <HeroWrapper>
-      <div>
+      <div className="hero-text">
         <RichTextCustom render={title.raw} />
         <p>{content}</p>
         <Button>
-          <Link to="/contact-us">Request Quote</Link>
+          <Link to="/contact-us">Contact Us</Link>
         </Button>
       </div>
-      <img src={backgroundImage} style={{ width: "50%" }} />
+      <img src={backgroundImage} style={{ width: "40%" }} />
     </HeroWrapper>
 
     // <HeroWrapper backgroundImage={backgroundImage}>
