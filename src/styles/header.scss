@@ -1,0 +1,45 @@
+.navbar {
+  .burger {
+    display: none;
+    div {
+      background-color: #333333;
+      height: 3px;
+      width: 30px;
+      margin: 5px;
+      cursor: pointer;
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  .navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .nav-links {
+      position: absolute;
+      right: 0;
+      height: 90vh;
+      top: 10vh;
+      background-color: #ea6354;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      transition: transform 0.5s ease-in;
+      transform: translateX(100%);
+      a {
+        font-size: 1.2rem;
+        color: white;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .burger {
+      display: block;
+    }
+    .nav-active {
+      transform: translateX(0%);
+    }
+  }
+}
