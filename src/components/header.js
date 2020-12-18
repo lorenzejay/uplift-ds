@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import "../styles/header.scss"
-import "../styles/responsive.scss"
+
 const Navbar = styled.header`
   z-index: 100;
   height: 10vh;
