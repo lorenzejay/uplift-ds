@@ -22,11 +22,19 @@
       }
     },
     "author": {
-      "type": "Link",
+      "type": "Text",
       "config": {
-        "select": "document",
         "label": "Author",
-        "placeholder": "Link to an author document"
+        "placeholder": "Name of the Author"
+      }
+    },
+    "preview_description": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "allowTargetBlank": true,
+        "label": "Preview Description",
+        "placeholder": "Preview of the blog, the first beginning of it on the bloghomepage"
       }
     },
     "body": {
@@ -43,7 +51,7 @@
               "text": {
                 "type": "StructuredText",
                 "config": {
-                  "multi": "paragraph, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, list-item, o-list-item",
+                  "multi": "paragraph, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, list-item, o-list-item",
                   "allowTargetBlank": true,
                   "label": "Text",
                   "placeholder": "Enter your text..."

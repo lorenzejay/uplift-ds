@@ -4,12 +4,14 @@ import { graphql, useStaticQuery } from "gatsby"
 import RichTextCustom from "../components/richText"
 import styled from "styled-components"
 import BackgroundImage from "gatsby-background-image"
+import { Date } from "prismic-reactjs"
 
 export const query = graphql`
   query BlogPostQuery($uid: String!) {
     prismicBlogPost(uid: { eq: $uid }) {
       uid
       data {
+        author
         title {
           raw
         }
@@ -57,6 +59,13 @@ const BlogPostWrapper = styled.section`
 `
 const BlogPostHeader = styled.div`
   display: flex;
+  justify-content: space-between;
+
+  div {
+    h1 {
+      font-size: 2.4rem;
+    }
+  }
 `
 
 export default function BlogPosts(props) {
@@ -65,26 +74,32 @@ export default function BlogPosts(props) {
   } = props
   console.log(prismicBlogPost)
 
+  const date = Date(prismicBlogPost.data.release_date)
+  const formattedDate = Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "2-digit",
+  }).format(date)
+
   return (
     <Layout>
       <BlogPostWrapper>
         <BlogPostHeader>
           <div>
             <RichTextCustom render={prismicBlogPost.data.title.raw} />
-            <p>{prismicBlogPost.data.release_date}</p>
+            <p>{formattedDate}</p>
+            <p>By {prismicBlogPost.data.author}</p>
           </div>
+
           <img
             src={prismicBlogPost.data.body[0].primary.image.url}
-            style={{ width: "50%" }}
+            style={{ width: "45%" }}
           />
         </BlogPostHeader>
         <div>
           <RichTextCustom
             render={prismicBlogPost.data.body[1].primary.text.raw}
           />
-          {/* <RichTextCustom
-            render={prismicBlogPost.data.body[1].primary.quote.raw}
-          /> */}
         </div>
       </BlogPostWrapper>
     </Layout>

@@ -4,13 +4,12 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 import styled from "styled-components"
 import BackgroundImage from "gatsby-background-image"
 import RichTextCustom from "../components/richText"
+import Button from "../components/button"
 
-const BlogHomepageWrapper = styled.section`
-  height: 100vh;
-`
+const BlogHomepageWrapper = styled.section``
 
 const HeroWrapper = styled(BackgroundImage)`
-  height: 80vh;
+  height: 45vh;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -20,14 +19,56 @@ const HeroWrapper = styled(BackgroundImage)`
   text-align: center;
   color: white;
 
-  /* div {
+  div {
     max-width: 800px;
-    margin: 0 auto;
+
     padding: 2%;
     background: rgba(0, 0, 0, 0.5);
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  } */
+  }
 `
+const BlogPreviewGrid = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5vw;
+  padding: 5%;
+  .blog-preview {
+    display: flex;
+    gap: 5vw;
+    height: 50vh;
+    width: 65vw;
+    padding: 5%;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    .blog-preview-title {
+      height: 7vh;
+
+      h1 {
+        font-size: 1rem;
+        color: #ea6354;
+      }
+    }
+
+    p {
+      font-size: 0.8rem;
+      display: -webkit-box;
+      max-width: 100%;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin: 5px 0 15px;
+    }
+    a {
+      margin: 0;
+      font-size: 0.8rem;
+      color: #333;
+    }
+  }
+`
+
 const BlogHomePage = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -54,27 +95,38 @@ const BlogHomePage = () => {
                   srcWebp
                 }
               }
+            }
+          }
+        }
+      }
+      allPrismicBlogPost {
+        edges {
+          node {
+            data {
               body {
-                ... on PrismicBlogHomepageBodyFeaturedPosts {
-                  id
-                  slice_type
+                ... on PrismicBlogPostBodyImage {
                   primary {
-                    title1 {
-                      raw
+                    image {
+                      url
                     }
-                  }
-                  items {
-                    cta_text1
                   }
                 }
               }
+              title {
+                raw
+              }
+              release_date
+              preview_description {
+                raw
+              }
             }
+            uid
           }
         }
       }
     }
   `)
-  console.log(data.allPrismicBlogHomepage.edges[0].node.data)
+  console.log(data.allPrismicBlogPost.edges)
   const blogHome = data.allPrismicBlogHomepage.edges[0].node.data
   return (
     <Layout>
@@ -90,14 +142,36 @@ const BlogHomePage = () => {
           <div>
             <RichTextCustom render={blogHome.title.raw} />
             <RichTextCustom render={blogHome.subtitle.raw} />
-            <button>
-              <Link to={blogHome.cta_link.raw.uid}>{blogHome.cta_text}</Link>
-            </button>
-
-            {/* <Link render/> */}
           </div>
         </HeroWrapper>
       </BlogHomepageWrapper>
+      <BlogPreviewGrid>
+        {data.allPrismicBlogPost.edges.map(({ node }, i) => {
+          console.log(node)
+          return (
+            <div className="blog-preview">
+              <img
+                src={node.data.body[0].primary.image.url}
+                style={{ width: "40%", objectFit: "cover" }}
+              />
+              <div>
+                <p style={{ fontSize: 13, color: "grey" }}>
+                  {node.data.release_date}
+                </p>
+                <div className="blog-preview-title">
+                  <RichTextCustom render={node.data.title.raw} />
+                </div>
+                <RichTextCustom
+                  render={node.data.preview_description.raw}
+                  className="blog-preview-text"
+                />
+
+                <Link to={node.uid}>Read More</Link>
+              </div>
+            </div>
+          )
+        })}
+      </BlogPreviewGrid>
     </Layout>
   )
 }
