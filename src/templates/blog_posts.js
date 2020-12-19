@@ -2,8 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import { graphql, useStaticQuery } from "gatsby"
 import RichTextCustom from "../components/richText"
-import styled from "styled-components"
-import BackgroundImage from "gatsby-background-image"
+import { BlogPostWrapper, BlogPostHeader } from "../styles/blog_styles"
 import { Date } from "prismic-reactjs"
 
 export const query = graphql`
@@ -46,24 +45,6 @@ export const query = graphql`
           }
         }
       }
-    }
-  }
-`
-const BlogPostWrapper = styled.section`
-  width: 100%;
-  min-height: 100vh;
-  padding: 10%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-const BlogPostHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-
-  div {
-    h1 {
-      font-size: 2.4rem;
     }
   }
 `
