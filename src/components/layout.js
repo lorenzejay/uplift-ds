@@ -12,11 +12,11 @@ const MainWrapper = styled.main`
 
 const Layout = ({ children }) => {
   return (
-    <>
+    <div style={{ overflowX: "hidden" }}>
       <Header />
       <MainWrapper>{children}</MainWrapper>
       <Footer />
-    </>
+    </div>
   )
 }
 
