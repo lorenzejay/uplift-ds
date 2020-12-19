@@ -7,6 +7,8 @@ module.exports = {
     title: `Uplift Digital Solutions`,
     description: `Digital Solutions for Businesses | Web Design and Development, Content Management, and Search Engine Optimization. Educational Blogs for business owners on why your digital prescence is important.`,
     author: `Lorenze Jay`,
+    url: "https://upliftdigitalsolutions.com/",
+    image: "/images/upliftds.png",
   },
   plugins: [
     `gatsby-plugin-sass`,

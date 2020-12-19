@@ -4,12 +4,16 @@ import { graphql, useStaticQuery } from "gatsby"
 import RichTextCustom from "../components/richText"
 import { BlogPostWrapper, BlogPostHeader } from "../styles/blog_styles"
 import { Date } from "prismic-reactjs"
+import SEO from "../components/seo"
 
 export const query = graphql`
   query BlogPostQuery($uid: String!) {
     prismicBlogPost(uid: { eq: $uid }) {
       uid
       data {
+        preview_description {
+          text
+        }
         author
         title {
           raw
@@ -64,6 +68,10 @@ export default function BlogPosts(props) {
 
   return (
     <Layout>
+      <SEO
+        title={`Uplift | ${prismicBlogPost.data.title.raw[0].text}`}
+        description={`Uplift Digital Solutions | ${prismicBlogPost.data.preview_description.text}`}
+      />
       <BlogPostWrapper>
         <BlogPostHeader>
           <div>

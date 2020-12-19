@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import SliceZone from "../components/sliceZone"
+import SEO from "../components/seo"
 
 const IndexPage = props => {
   const data = useStaticQuery(graphql`
@@ -144,6 +145,10 @@ const IndexPage = props => {
 
   return (
     <Layout>
+      <SEO
+        title="Uplift | Home"
+        description="Uplift Digital Solutions | Specializing in Web Design, Development, SEO, and Content Management."
+      />
       <SliceZone body={data.allPrismicHomepage.edges[0].node.data.body} />
     </Layout>
   )

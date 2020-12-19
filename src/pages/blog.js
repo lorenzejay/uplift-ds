@@ -7,6 +7,7 @@ import {
   BlogHomepageWrapper,
 } from "../styles/blog_styles"
 import RichTextCustom from "../components/richText"
+import SEO from "../components/seo"
 
 const BlogHomePage = () => {
   const data = useStaticQuery(graphql`
@@ -65,10 +66,14 @@ const BlogHomePage = () => {
       }
     }
   `)
-  console.log(data.allPrismicBlogPost.edges)
+  // console.log(data.allPrismicBlogPost.edges)
   const blogHome = data.allPrismicBlogHomepage.edges[0].node.data
   return (
     <Layout>
+      <SEO
+        title="Uplift | Blog"
+        description="Uplift Digital Solutions | We write blogs encompassing the topics of buisness tips, SEO, importance of social media, digital development any many more."
+      />
       <BlogHomepageWrapper>
         <HeroWrapper
           Tag="section"

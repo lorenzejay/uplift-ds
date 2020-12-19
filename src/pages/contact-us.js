@@ -12,6 +12,7 @@ import {
   Form,
   Button,
 } from "../styles/contact_styles"
+import SEO from "../components/seo"
 
 const ContactUs = () => {
   const data = useStaticQuery(graphql`
@@ -47,10 +48,14 @@ const ContactUs = () => {
     }
   `)
   const classes = useStyles()
-  console.log(data.allPrismicContactPage.edges[0].node.data)
+  // console.log(data.allPrismicContactPage.edges[0].node.data)
   return (
     <Layout>
       <ContactWrapper>
+        <SEO
+          title="Uplift | Contact Us"
+          description="Uplift Digital Solutions | Contact Us if you have any questions. We will respond to you within 48 Hours."
+        />
         <Form
           className={classes.root}
           method="post"
