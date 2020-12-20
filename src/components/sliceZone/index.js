@@ -7,7 +7,6 @@ import Testimonials from "../testimonials"
 import WorksDisplay from "../worksDisplay"
 import "./styles.scss"
 const SliceZone = ({ body }) => {
-  console.log(body)
   return (
     <div>
       {body.map((bodyContent, i) => {

@@ -91,7 +91,6 @@ const BlogHomePage = () => {
       </BlogHomepageWrapper>
       <BlogPreviewGrid>
         {data.allPrismicBlogPost.edges.map(({ node }, i) => {
-          console.log(node)
           return (
             <div className="blog-preview">
               <img

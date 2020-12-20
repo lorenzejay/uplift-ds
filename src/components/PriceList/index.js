@@ -23,7 +23,7 @@ const PriceList = ({ title, pricingList }) => {
       <RichText render={title} />
       <div className="price-list-card-row">
         {pricingList.map((item, i) => {
-          console.log(item)
+          // console.log(item)
           return (
             <PriceItem
               key={i}

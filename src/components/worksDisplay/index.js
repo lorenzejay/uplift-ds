@@ -7,7 +7,6 @@ import {
   WorkDisplayText,
 } from "./styles"
 const WorksDisplay = ({ title, workItems }) => {
-  console.log(workItems)
   return (
     <WorkDisplayWrapper>
       <RichTextCustom render={title} />

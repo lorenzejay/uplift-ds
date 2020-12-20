@@ -57,7 +57,6 @@ export default function BlogPosts(props) {
   const {
     data: { prismicBlogPost },
   } = props
-  console.log(prismicBlogPost)
 
   const date = Date(prismicBlogPost.data.release_date)
   const formattedDate = Intl.DateTimeFormat("en-US", {
