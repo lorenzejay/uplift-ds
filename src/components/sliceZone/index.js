@@ -4,6 +4,7 @@ import FeaturedGrid from "../featuredGrid"
 import Hero from "../hero"
 import PriceList from "../PriceList"
 import Testimonials from "../testimonials"
+import WorksDisplay from "../worksDisplay"
 import "./styles.scss"
 const SliceZone = ({ body }) => {
   console.log(body)
@@ -33,6 +34,14 @@ const SliceZone = ({ body }) => {
               key={i}
               title={bodyContent.primary.call_to_actions_title.raw}
               ctaItems={bodyContent.items}
+            />
+          )
+        } else if (bodyContent.slice_type === "works_display") {
+          return (
+            <WorksDisplay
+              key={i}
+              title={bodyContent.primary.works_title.raw}
+              workItems={bodyContent.items}
             />
           )
         } else if (bodyContent.slice_type === "testimonials") {

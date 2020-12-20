@@ -113,6 +113,29 @@ const IndexPage = props => {
                     }
                   }
                 }
+                ... on PrismicHomepageBodyWorksDisplay {
+                  slice_type
+                  primary {
+                    works_title {
+                      raw
+                    }
+                  }
+                  items {
+                    works_title {
+                      raw
+                    }
+                    works_description {
+                      raw
+                    }
+                    works_link {
+                      raw
+                      url
+                    }
+                    works_image {
+                      url
+                    }
+                  }
+                }
 
                 ... on PrismicHomepageBodyPriceList {
                   slice_type
