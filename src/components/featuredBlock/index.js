@@ -6,7 +6,7 @@ const FeaturedBlock = ({ title, content, image }) => {
   return (
     <FeaturedBlockWrapper>
       <div className="featured-image-wrapper">
-        <img src={image} alt="featured" style={{ width: 150 }} />
+        <img src={image} alt="featured" />
       </div>
       <div className="featured-title">
         <RichTextCustom render={title} />

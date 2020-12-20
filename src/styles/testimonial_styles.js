@@ -3,6 +3,18 @@ import { device } from "../styles/default"
 
 export const TestimonialWrapper = styled.section`
   padding: 5%;
+  @media ${device.mobileS} {
+    h2 {
+      text-align: center;
+      margin-top: 5vh;
+    }
+  }
+  @media ${device.laptop} {
+    h2 {
+      text-align: start;
+      margin: 0;
+    }
+  }
 `
 export const TestimonialCard = styled.div`
   width: 70%;
@@ -13,10 +25,19 @@ export const TestimonialCard = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   border-bottom: 1px solid #333;
+  @media ${device.mobileS} {
+    padding: 0;
+  }
+  @media ${device.laptop} {
+    padding: 5%;
+  }
 `
 export const TestimonialProfile = styled.div`
   width: 17vw;
-
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10vh;
   h5 {
     margin-top: 3vh;
   }
@@ -49,13 +70,14 @@ export const TestimonialImgAndQuote = styled.div`
   flex-direction: row;
   align-items: center;
   p {
-    width: 75%;
     margin: auto 0;
   }
   @media ${device.mobileS} {
+    gap: 5vh;
     flex-direction: column;
     p {
       width: 100%;
+      margin-bottom: 5vh;
     }
   }
   @media ${device.laptop} {

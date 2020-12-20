@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import "../styles/header.scss"
+import { device } from "../styles/default"
 
 const Navbar = styled.header`
   z-index: 100;
@@ -18,11 +19,12 @@ const Navbar = styled.header`
 const NavLinks = styled.div`
   margin-left: auto;
   display: flex;
+  justify-content: space-around;
+  width: 20%;
 `
 const NavLink = styled.div`
   a {
     color: #333;
-    padding: 0 16px;
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
@@ -31,17 +33,27 @@ const NavLink = styled.div`
       text-decoration: underline;
     }
   }
+  @media ${device.desktop} {
+    a {
+      font-size: 1.8rem;
+    }
+  }
 `
 const Branding = styled.div`
   margin: auto 0;
-
   a {
+    letter-spacing: 5px;
     color: #333;
     padding: 0 16px;
     text-decoration: none;
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
+  }
+  @media ${device.desktop} {
+    .nav-logo {
+      font-size: 3rem;
+    }
   }
 `
 const Header = () => {
@@ -70,7 +82,7 @@ const Header = () => {
   return (
     <Navbar className="navbar">
       <Branding>
-        <Link to="/">
+        <Link to="/" className="nav-logo">
           {data.allPrismicNavigation.edges[0].node.data.branding}
         </Link>
       </Branding>

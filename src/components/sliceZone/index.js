@@ -40,6 +40,7 @@ const SliceZone = ({ body }) => {
             <Testimonials
               title={bodyContent.primary.testimonial_section_title}
               testimonials={bodyContent.items}
+              key={i}
             />
           )
         } else if (bodyContent.slice_type === "price_list") {

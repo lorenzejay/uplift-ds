@@ -17,7 +17,8 @@
           "featured_grid": [],
           "price_list": [],
           "call_to_actions": [],
-          "testimonials": []
+          "testimonials": [],
+          "works_display": []
         },
         "choices": {
           "hero": {
@@ -243,6 +244,55 @@
                 "config": {
                   "label": "Author job",
                   "placeholder": "Occupation of author"
+                }
+              }
+            }
+          },
+          "works_display": {
+            "type": "Slice",
+            "fieldset": "Works Display",
+            "description": "Show off your portfolio works.",
+            "icon": "face",
+            "display": "list",
+            "non-repeat": {
+              "works_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading2",
+                  "label": "Works title"
+                }
+              }
+            },
+            "repeat": {
+              "works_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Works Image"
+                }
+              },
+              "works_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading3",
+                  "label": "Works Title",
+                  "placeholder": "Title of the portfolio item"
+                }
+              },
+              "works_description": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph",
+                  "label": "works description",
+                  "placeholder": "Short Description of the work"
+                }
+              },
+              "works_link": {
+                "type": "Link",
+                "config": {
+                  "label": "Works Link",
+                  "placeholder": "Link to the portfolio item in the web"
                 }
               }
             }
