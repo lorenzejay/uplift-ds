@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql } from "gatsby"
 import RichTextCustom from "../components/richText"
 import { BlogPostWrapper, BlogPostHeader } from "../styles/blog_styles"
 import { Date } from "prismic-reactjs"
@@ -83,6 +83,7 @@ export default function BlogPosts(props) {
           <img
             src={prismicBlogPost.data.body[0].primary.image.url}
             style={{ width: "45%" }}
+            alt="blog post hero"
           />
         </BlogPostHeader>
         <div>

@@ -14,7 +14,7 @@ const Hero = ({ title, content, backgroundImage }) => {
           <Link to="/contact-us">Contact Us</Link>
         </Button>
       </div>
-      <img src={backgroundImage} />
+      <img src={backgroundImage} alt="Hero" />
     </HeroWrapper>
 
     // <HeroWrapper backgroundImage={backgroundImage}>

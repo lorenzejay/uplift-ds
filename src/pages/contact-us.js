@@ -2,7 +2,6 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import TextField from "@material-ui/core/TextField"
-import styled from "styled-components"
 import RichTextCustom from "../components/richText"
 import linkResolver from "../utils/linkResolver"
 import {

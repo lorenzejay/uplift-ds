@@ -13,8 +13,8 @@ const WorksDisplay = ({ title, workItems }) => {
       <RichTextCustom render={title} />
       {workItems.map((item, i) => {
         return (
-          <WorkDisplayContent>
-            <img src={item.works_image.url} />
+          <WorkDisplayContent key={i}>
+            <img src={item.works_image.url} alt="Portfolio Work" />
             <WorkDisplayText>
               <RichTextCustom render={item.works_title.raw} />
               <RichTextCustom render={item.works_description.raw} />
