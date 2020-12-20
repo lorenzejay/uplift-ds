@@ -3,6 +3,18 @@ import { device } from "../../styles/default"
 
 export const WorkDisplayWrapper = styled.section`
   padding: 5%;
+  @media ${device.mobileS} {
+    padding: 10% 5%;
+    h2 {
+      text-align: center;
+      font-size: 1.5rem;
+    }
+  }
+  @media ${device.laptop} {
+    h2 {
+      font-size: 2rem;
+    }
+  }
 `
 
 export const WorkDisplayContent = styled.div`
@@ -23,7 +35,6 @@ export const WorkDisplayText = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  width: 600px;
 
   h3 {
     float: left;
@@ -36,5 +47,11 @@ export const WorkDisplayText = styled.div`
       color: white;
       text-decoration: none;
     }
+  }
+  @media ${device.mobileS} {
+    width: 100%;
+  }
+  @media ${device.laptop} {
+    width: 600px;
   }
 `

@@ -3,6 +3,7 @@ import { device } from "../styles/default"
 
 export const TestimonialWrapper = styled.section`
   padding: 5%;
+  background: #c6f8f6;
   @media ${device.mobileS} {
     h2 {
       text-align: center;

@@ -3,15 +3,24 @@ import { device } from "./default"
 
 export const FeaturedSectionWrapper = styled.section`
   width: 100%;
-  padding: 5%;
+
   margin: 0 auto;
+  @media ${device.mobileS} {
+    padding: 10% 5%;
+    h2 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
   @media ${device.laptop} {
-    h1 {
+    padding: 5%;
+    h2 {
       font-size: 1.8rem;
+      text-align: start;
     }
   }
   @media ${device.desktop} {
-    h1 {
+    h2 {
       font-size: 3rem;
     }
   }

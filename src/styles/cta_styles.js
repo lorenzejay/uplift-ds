@@ -16,7 +16,7 @@ export const CtaWrapper = styled.section`
   @media ${device.mobileS} {
     padding: 10%;
     h2 {
-      font-size: 2.5rem;
+      font-size: 1.5rem;
       text-align: center;
       margin-bottom: 5vh;
     }
@@ -46,7 +46,8 @@ export const CtaCard = styled.div`
     h3 {
       text-transform: uppercase;
       letter-spacing: 5px;
-      width: 85%;
+
+      width: 100%;
     }
 
     p {
@@ -66,7 +67,7 @@ export const CtaCard = styled.div`
       object-fit: cover;
     }
     h2 {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
     }
     .cta-card-text {
       float: left;
