@@ -43,8 +43,10 @@ export const FeaturedBlockWrapper = styled.section`
   padding: 20px;
   margin: 20px 0;
   border-radius: 24px;
-  background: #e0e5ec;
-  box-shadow: -29px -29px 57px #bec3c9, 29px 29px 57px #ffffff;
+  background: white;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  /* background: #e0e5ec;
+  box-shadow: -29px -29px 57px #bec3c9, 29px 29px 57px #ffffff; */
 
   display: flex;
   flex-direction: column;
