@@ -6,7 +6,7 @@ export const CtaWrapper = styled.section`
   padding: 5%;
   background-image: linear-gradient(
     130deg,
-    rgba(234, 84, 89, 1) 50%,
+    rgba(234, 99, 84, 1) 50%,
     rgba(84, 234, 229, 1) 100%
   );
   h2 {

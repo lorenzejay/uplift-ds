@@ -31,7 +31,12 @@
             "type": "Link",
             "config": {
               "select": "document",
-              "customtypes": ["contact_page", "blog_homepage"],
+              "customtypes": [
+                "contact_page",
+                "blog_homepage",
+                "homepage",
+                "about"
+              ],
               "label": "Link",
               "placeholder": "Link"
             }

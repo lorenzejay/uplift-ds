@@ -8,7 +8,7 @@ module.exports = {
     description: `Digital Solutions for Businesses | Web Design and Development, Content Management, and Search Engine Optimization. Educational Blogs for business owners on why your digital prescence is important.`,
     author: `Lorenze Jay`,
     url: "https://upliftdigitalsolutions.com/",
-    image: "/images/upliftds.png",
+    image: "/images/upliftsquare.png",
   },
   plugins: [
     `gatsby-plugin-sass`,
@@ -47,6 +47,7 @@ module.exports = {
         },
         schemas: {
           contact_page: require("./src/schemas/contact_page.json"),
+          about: require("./src/schemas/about.json"),
           navigation: require("./src/schemas/navigation_links.json"),
           homepage: require("./src/schemas/homepage.json"),
           blog_homepage: require("./src/schemas/blog_homepage.json"),
@@ -86,13 +87,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Uplift Digital Solutions`,
+        short_name: `Specializing Web Design and Development, SEO and Content Management`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#ea5459`,
+        theme_color: `#ea5459`,
         display: `minimal-ui`,
-        icon: `src/images/uplift.png`, // This path is relative to the root of the site.
+        icon: `src/images/upliftsquare.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

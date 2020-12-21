@@ -4,7 +4,7 @@ import BackgroundImage from "gatsby-background-image"
 
 export const BlogHomepageWrapper = styled.section``
 export const HeroWrapper = styled(BackgroundImage)`
-  height: 45vh;
+  height: 40vh;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
