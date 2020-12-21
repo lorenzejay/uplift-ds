@@ -169,7 +169,7 @@ const IndexPage = props => {
   return (
     <Layout>
       <SEO
-        title="Uplift | Home"
+        title="Uplift | Web Design and Development Solution"
         description="Uplift Digital Solutions | Specializing in Web Design, Development, SEO, and Content Management."
       />
       <SliceZone body={data.allPrismicHomepage.edges[0].node.data.body} />
