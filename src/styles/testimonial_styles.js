@@ -9,11 +9,22 @@ export const TestimonialWrapper = styled.section`
       text-align: center;
       margin-top: 5vh;
     }
+    .carousel {
+      min-height: 60vh;
+      width: 100%;
+      .carousel-item {
+        padding: 5%;
+      }
+    }
   }
+
   @media ${device.laptop} {
     h2 {
       text-align: start;
       margin: 0;
+    }
+    .carousel {
+      min-height: 60vh;
     }
   }
 `
@@ -66,12 +77,15 @@ export const ImageCropper = styled.div`
 `
 export const TestimonialImgAndQuote = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 10vw;
   width: 100%;
-  flex-direction: row;
+
   align-items: center;
   p {
     margin: auto 0;
+    display: block;
+    margin-bottom: 5vh;
   }
   @media ${device.mobileS} {
     gap: 5vh;
@@ -82,9 +96,10 @@ export const TestimonialImgAndQuote = styled.div`
     }
   }
   @media ${device.laptop} {
-    flex-direction: row;
+    flex-direction: column;
     p {
-      width: 100%;
+      width: 65%;
+      font-size: 1.3rem;
     }
   }
 `

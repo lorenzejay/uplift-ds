@@ -1,38 +1,33 @@
 import React from "react"
 import "./styles.scss"
 import RichTextCustom from "../richText"
+import "bootstrap/dist/css/bootstrap.min.css"
 import {
-  TestimonialAuthorAndLink,
-  TestimonialCard,
-  TestimonialImgAndQuote,
-  TestimonialProfile,
   TestimonialWrapper,
+  TestimonialImgAndQuote,
   ImageCropper,
 } from "../../styles/testimonial_styles"
+import { Carousel } from "react-bootstrap"
 
 const Testimonials = ({ title, testimonials }) => {
   return (
     <TestimonialWrapper>
       <RichTextCustom render={title.raw} />
-      {testimonials.map((item, i) => {
-        return (
-          <TestimonialCard key={i} index={i}>
-            <TestimonialImgAndQuote>
-              <TestimonialProfile>
+      <Carousel indicators={false}>
+        {testimonials.map((item, i) => {
+          return (
+            <Carousel.Item key={i}>
+              <TestimonialImgAndQuote>
                 <ImageCropper>
-                  <img src={item.author_image.url} alt={"testimonial writer"} />
+                  <img src={item.author_image.url} alt="Testimonial Author" />
                 </ImageCropper>
-                <TestimonialAuthorAndLink>
-                  <RichTextCustom render={item.testimonial_author.raw} />
-                  <p>{item.author_job}</p>
-                </TestimonialAuthorAndLink>
-              </TestimonialProfile>
-
-              <RichTextCustom render={item.testimonial_content.raw} />
-            </TestimonialImgAndQuote>
-          </TestimonialCard>
-        )
-      })}
+                <RichTextCustom render={item.testimonial_author.raw} />
+                <RichTextCustom render={item.testimonial_content.raw} />
+              </TestimonialImgAndQuote>
+            </Carousel.Item>
+          )
+        })}
+      </Carousel>
     </TestimonialWrapper>
   )
 }

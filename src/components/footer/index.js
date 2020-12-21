@@ -37,6 +37,9 @@ const SocialWrapper = styled.span`
   justify-content: center;
 `
 const PageLinks = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
   a {
     font-size: 14px;
     color: white;
@@ -66,10 +69,14 @@ const Footer = () => {
         </SocialWrapper>
       </div>
       <div>
-        <p style={{ color: "white" }}>🚀 Uplifting you from the competition.</p>
+        <p style={{ color: "white" }}>
+          <span>🚀</span> Uplifting you from the competition.
+        </p>
       </div>
       <PageLinks>
+        <Link to="/about">About</Link>
         <Link to="/contact-us">Contact Us</Link>
+        <Link to="/blog">Blog</Link>
       </PageLinks>
     </FooterWrapper>
   )
