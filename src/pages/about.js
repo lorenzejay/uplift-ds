@@ -25,7 +25,7 @@ const About = () => {
       }
     }
   `)
-  console.log(data.allPrismicAbout.edges[0].node.data)
+  // console.log(data.allPrismicAbout.edges[0].node.data)
   const aboutData = data.allPrismicAbout.edges[0].node.data
   return (
     <Layout>

@@ -3,7 +3,6 @@ import { device } from "./default"
 
 export const AboutWrapper = styled.div`
   .about-hero {
-    height: 40vh;
     background: #ea6354;
     display: flex;
     align-items: center;
@@ -35,9 +34,21 @@ export const AboutWrapper = styled.div`
     }
   }
   @media ${device.laptop} {
+    .about-hero {
+      height: 40vh;
+    }
+
     .about-img-content {
       margin: 0 auto;
       width: 65%;
+      h3 {
+        margin: 5vh 0;
+      }
+      p {
+        font-size: 1.1rem;
+        line-height: 2rem;
+        margin-bottom: 3vh;
+      }
     }
   }
 `
