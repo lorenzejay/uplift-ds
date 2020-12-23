@@ -38,13 +38,10 @@ export const BlogPreviewGrid = styled.div`
     padding: 5%;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-    .blog-preview-title {
-      height: 7vh;
 
-      h1 {
-        font-size: 1rem;
-        color: #ea6354;
-      }
+    h1 {
+      font-size: 1rem;
+      color: #ea6354;
     }
 
     p {
@@ -75,6 +72,7 @@ export const BlogPreviewGrid = styled.div`
       img {
         width: 100%;
         margin: 0;
+        object-fit: cover;
       }
     }
   }
@@ -82,8 +80,35 @@ export const BlogPreviewGrid = styled.div`
   @media ${device.laptop} {
     .blog-preview {
       flex-direction: row;
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
       img {
         width: 45%;
+        height: auto;
+      }
+    }
+  }
+
+  @media ${device.desktop} {
+    .blog-preview {
+      flex-direction: row;
+      img {
+        width: 45%;
+        height: auto;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+      }
+
+      p {
+        font-size: 2rem;
+      }
+      a {
+        font-size: 2rem;
       }
     }
   }

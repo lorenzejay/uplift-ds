@@ -98,12 +98,10 @@ const BlogHomePage = () => {
                 alt="Blog Preview media"
               />
               <div>
-                <p style={{ fontSize: 13, color: "grey" }}>
-                  {node.data.release_date}
-                </p>
-                <div className="blog-preview-title">
-                  <RichTextCustom render={node.data.title.raw} />
-                </div>
+                <p className="blog-preview-date">{node.data.release_date}</p>
+
+                <RichTextCustom render={node.data.title.raw} />
+
                 <RichTextCustom
                   render={node.data.preview_description.raw}
                   className="blog-preview-text"

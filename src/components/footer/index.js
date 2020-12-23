@@ -70,7 +70,10 @@ const Footer = () => {
       </div>
       <div>
         <p style={{ color: "white" }}>
-          <span>🚀</span> Uplifting you from the competition.
+          <span role="img" aria-label="rocketship emoji">
+            🚀
+          </span>{" "}
+          Uplifting you from the competition.
         </p>
       </div>
       <PageLinks>

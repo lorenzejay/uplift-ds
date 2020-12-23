@@ -21,6 +21,12 @@ const NavLinks = styled.div`
   display: flex;
   justify-content: space-around;
   width: 20%;
+  @media ${device.tablet} {
+    width: 40%;
+  }
+  @media ${device.laptop} {
+    width: 30%;
+  }
 `
 const NavLink = styled.div`
   a {
@@ -33,6 +39,7 @@ const NavLink = styled.div`
       text-decoration: underline;
     }
   }
+
   @media ${device.desktop} {
     a {
       font-size: 1.8rem;
