@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { RiLinkedinFill, RiTwitterFill, RiInstagramFill } from "react-icons/ri"
 import { Link } from "gatsby"
+import { device } from "../../styles/default"
 
 const FooterWrapper = styled.section`
   background: #ea6354;
@@ -43,6 +44,9 @@ const PageLinks = styled.div`
   a {
     font-size: 14px;
     color: white;
+  }
+  @media ${device.laptop} {
+    width: 30%;
   }
 `
 

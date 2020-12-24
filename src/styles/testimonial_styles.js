@@ -91,7 +91,7 @@ export const TestimonialImgAndQuote = styled.div`
     gap: 5vh;
     flex-direction: column;
     p {
-      width: 100%;
+      width: 75%;
       margin-bottom: 5vh;
     }
   }

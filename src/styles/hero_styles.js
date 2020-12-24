@@ -28,6 +28,8 @@ export const HeroWrapper = styled.div`
       font-size: 1.1rem;
       width: 75%;
       text-align: center;
+
+      color: #808080;
     }
   }
   button {
@@ -47,6 +49,7 @@ export const HeroWrapper = styled.div`
       padding: 5px 15px;
       a {
         font-size: 14px;
+        text-decoration: none;
       }
     }
     img {
@@ -72,7 +75,15 @@ export const HeroWrapper = styled.div`
   }
   @media ${device.laptop} {
     height: 90vh;
-    justify-content: space-around;
+    .hero-text {
+      h1 {
+        font-size: 2.3rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+    justify-content: space-between;
     img {
       width: 40%;
     }
@@ -84,14 +95,17 @@ export const HeroWrapper = styled.div`
     }
   }
   @media ${device.laptopL} {
-    padding: 0%;
     height: 60vh;
     img {
       width: 30%;
     }
+    .hero-text {
+      p {
+        width: 55%;
+      }
+    }
   }
   @media ${device.desktop} {
-    padding: 0;
     height: 75vh;
     .hero-text {
       h1 {
@@ -99,10 +113,11 @@ export const HeroWrapper = styled.div`
       }
       p {
         font-size: 2rem;
-        line-height: 2.2rem;
+        line-height: 2.5rem;
       }
       button {
-        padding: 15px 30px;
+        margin-top: 3vh;
+        padding: 10px 30px;
         a {
           font-size: 2rem;
         }

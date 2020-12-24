@@ -94,7 +94,7 @@ export const CtaCard = styled.div`
       p {
         margin: 15px 0;
         float: ${props => (props.index % 2 !== 0 ? "right" : "")};
-        width: 100%;
+        width: 90%;
       }
     }
     img {
