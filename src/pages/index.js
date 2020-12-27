@@ -1,10 +1,15 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import SliceZone from "../components/sliceZone"
 import SEO from "../components/seo"
-
+import AOS from "aos"
+import "aos/dist/aos.css"
 const IndexPage = props => {
+  useEffect(() => {
+    AOS.init({ duration: 2000 })
+    AOS.refresh()
+  }, [])
   const data = useStaticQuery(graphql`
     {
       allPrismicHomepage {

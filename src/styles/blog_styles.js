@@ -76,6 +76,15 @@ export const BlogPreviewGrid = styled.div`
       }
     }
   }
+  @media ${device.tablet} {
+    .blog-preview {
+      width: 75%;
+      img {
+        margin: 0 auto;
+        width: 35%;
+      }
+    }
+  }
 
   @media ${device.laptop} {
     .blog-preview {

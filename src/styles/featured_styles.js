@@ -63,10 +63,11 @@ export const FeaturedBlockWrapper = styled.section`
   }
 
   @media ${device.mobileS} {
-    width: 80vw;
+    width: 85vw;
     min-height: 40vh;
     margin: 5vh auto;
     text-align: center;
+    border-radius: 0;
     .featured-image-wrapper {
       height: 15vh;
       margin-bottom: 15px;
@@ -98,7 +99,7 @@ export const FeaturedBlockWrapper = styled.section`
     width: 25vw;
     height: 60vh;
     justify-content: space-evenly;
-
+    border-radius: 20px;
     .featured-image-wrapper {
       height: 20vh;
       width: 100%;

@@ -8,6 +8,7 @@ export const TestimonialWrapper = styled.section`
     h2 {
       text-align: center;
       margin-top: 5vh;
+      font-size: 1.5rem;
     }
     .carousel {
       min-height: 60vh;

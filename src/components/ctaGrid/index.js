@@ -1,6 +1,8 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { CtaCard, CtaWrapper } from "../../styles/cta_styles"
 import RichTextCustom from "../richText"
+
+import "aos/dist/aos.css"
 
 const CtaGrid = ({ title, ctaItems }) => {
   return (
@@ -9,14 +11,18 @@ const CtaGrid = ({ title, ctaItems }) => {
       {ctaItems.map((item, i) => {
         return (
           <CtaCard key={i} index={i}>
-            <div className="cta-card-text">
+            <div data-aos="fade-right" className="cta-card-text">
               <RichTextCustom render={item.cta_section_title.raw} />
               <RichTextCustom
                 render={item.cta_section_content.raw}
                 className="cta-text-content"
               />
             </div>
-            <img src={item.cta_image.url} alt={item.cta_section_title.raw} />
+            <img
+              data-aos="fade-left"
+              src={item.cta_image.url}
+              alt={item.cta_section_title.raw}
+            />
           </CtaCard>
         )
       })}
