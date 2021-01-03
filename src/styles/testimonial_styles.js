@@ -3,9 +3,10 @@ import { device } from "../styles/default"
 
 export const TestimonialWrapper = styled.section`
   padding: 5%;
-  background: #c6f8f6;
+  background: ${({ theme }) => theme.hero};
   @media ${device.mobileS} {
     h2 {
+      color: ${({ theme }) => theme.text};
       text-align: center;
       margin-top: 5vh;
       font-size: 1.5rem;
@@ -52,8 +53,9 @@ export const TestimonialProfile = styled.div`
   align-items: center;
   flex-direction: column;
   margin-top: 10vh;
-  h5 {
+  h4 {
     margin-top: 3vh;
+    color: ${({ theme }) => theme.text};
   }
   @media ${device.mobileS} {
     width: auto;
@@ -84,10 +86,14 @@ export const TestimonialImgAndQuote = styled.div`
   width: 100%;
 
   align-items: center;
+  h4 {
+    color: ${({ theme }) => theme.text};
+  }
   p {
     margin: auto 0;
     display: block;
     margin-bottom: 5vh;
+    color: ${({ theme }) => theme.text};
   }
   @media ${device.mobileS} {
     gap: 5vh;
