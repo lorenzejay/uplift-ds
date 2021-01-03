@@ -60,7 +60,6 @@ const ContactUs = () => {
           data-netlify="true"
           name="contact"
           action="/contact-success"
-          onSubmit={e => e.preventDefault()}
         >
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />

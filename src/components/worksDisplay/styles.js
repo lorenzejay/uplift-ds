@@ -47,7 +47,7 @@ export const WorkDisplayText = styled.div`
     color: ${({ theme }) => theme.text};
   }
   button {
-    background: #ea5459;
+    background: #ea6354;
     padding: 4px 30px;
     a {
       font-size: 0.8rem;

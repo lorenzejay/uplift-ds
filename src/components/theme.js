@@ -10,6 +10,6 @@ export const darkTheme = {
   text: "#FAFAFA",
   toggleBorder: "#6B8096",
   background: "#181818",
-  hero: "#16a0b0",
+  hero: "#54dbea",
   darkContrast: "#242526",
 }

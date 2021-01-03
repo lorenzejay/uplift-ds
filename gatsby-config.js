@@ -90,8 +90,8 @@ module.exports = {
         name: `Uplift Digital Solutions`,
         short_name: `Specializing Web Design and Development, SEO and Content Management`,
         start_url: `/`,
-        background_color: `#ea5459`,
-        theme_color: `#ea5459`,
+        background_color: `#ea6354`,
+        theme_color: `#ea6354`,
         display: `minimal-ui`,
         icon: `src/images/upliftsquare.png`, // This path is relative to the root of the site.
       },
