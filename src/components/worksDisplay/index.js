@@ -18,7 +18,9 @@ const WorksDisplay = ({ title, workItems, darkMode }) => {
               <RichTextCustom render={item.works_title.raw} />
               <RichTextCustom render={item.works_description.raw} />
               <Button>
-                <a href={item.works_link.url}>View</a>
+                <a href={item.works_link.url} target="_blank">
+                  View
+                </a>
               </Button>
             </WorkDisplayText>
           </WorkDisplayContent>
