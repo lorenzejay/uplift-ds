@@ -175,7 +175,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO
-        title="Uplift | Los Angeles, California based Web Design and Development Services"
+        title="Uplift | Los Angeles based Web Design and Development Services"
         description="Uplift Digital Solutions | Specializes in Web Design, Development, and SEO. Based in Los Angeles."
       />
       <SliceZone body={data.allPrismicHomepage.edges[0].node.data.body} />

@@ -5,7 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Uplift Digital Solutions`,
-    description: `Digital Solutions for Businesses | Web Design and Development, Content Management, and Search Engine Optimization. Educational Blogs for business owners on why your digital prescence is important.`,
+    description: `Los Angeles based Web Design and Development Solutions.`,
     author: `Lorenze Jay`,
     url: "https://upliftdigitalsolutions.com/",
     image: "/images/upliftsquare.png",
