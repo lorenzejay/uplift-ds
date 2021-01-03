@@ -3,8 +3,12 @@ import { device } from "./default"
 
 export const FeaturedSectionWrapper = styled.section`
   width: 100%;
-
+  background: ${({ theme }) => theme.background};
   margin: 0 auto;
+  h2 {
+    color: ${({ theme }) => theme.text};
+    text-transform: uppercase;
+  }
   @media ${device.mobileS} {
     padding: 10% 5%;
     h2 {
@@ -43,7 +47,7 @@ export const FeaturedBlockWrapper = styled.section`
   padding: 20px;
   margin: 20px 0;
   border-radius: 24px;
-  background: white;
+  background: ${({ theme }) => theme.darkContrast};
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   /* background: #e0e5ec;
   box-shadow: -29px -29px 57px #bec3c9, 29px 29px 57px #ffffff; */
@@ -58,8 +62,13 @@ export const FeaturedBlockWrapper = styled.section`
   }
 
   .featured-title {
+    text-transform: uppercase;
     width: 100%;
     text-align: center;
+    color: ${({ theme }) => theme.text};
+  }
+  p {
+    color: ${({ theme }) => theme.text};
   }
 
   @media ${device.mobileS} {

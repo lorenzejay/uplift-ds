@@ -30,7 +30,9 @@ export const BlogPreviewGrid = styled.div`
   justify-content: space-around;
   gap: 5vw;
   padding: 5%;
+  background: ${({ theme }) => theme.background};
   .blog-preview {
+    background: ${({ theme }) => theme.darkContrast};
     display: flex;
     gap: 5vw;
     height: 50vh;
@@ -38,7 +40,11 @@ export const BlogPreviewGrid = styled.div`
     padding: 5%;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-
+    h1,
+    p,
+    a {
+      color: ${({ theme }) => theme.text};
+    }
     h1 {
       font-size: 1rem;
       color: #ea6354;
@@ -56,7 +62,6 @@ export const BlogPreviewGrid = styled.div`
     a {
       margin: 0;
       font-size: 0.8rem;
-      color: #333;
     }
   }
 
@@ -130,14 +135,31 @@ export const BlogPostWrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: ${({ theme }) => theme.darkContrast};
+  .blog-content {
+    color: ${({ theme }) => theme.text};
+    p {
+      line-height: 2rem;
+    }
+  }
 `
 export const BlogPostHeader = styled.div`
   display: flex;
   justify-content: space-between;
 
   div {
-    h1 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    a {
+      color: ${({ theme }) => theme.text};
       font-size: 2.4rem;
+    }
+    p {
+      color: ${({ theme }) => theme.text};
     }
   }
 

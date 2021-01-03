@@ -10,11 +10,16 @@ const _404Page = styled.section`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background: ${({ theme }) => theme.background};
+  h1,
+  p,
+  a {
+    color: ${({ theme }) => theme.text};
+  }
   h1 {
     font-size: 4rem;
   }
   a {
-    color: #333;
     text-decoration: none;
     font-weight: bold;
     text-transform: uppercase;

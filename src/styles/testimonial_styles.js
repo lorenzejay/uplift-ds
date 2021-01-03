@@ -9,6 +9,7 @@ export const TestimonialWrapper = styled.section`
       text-align: center;
       margin-top: 5vh;
       font-size: 1.5rem;
+      text-transform: uppercase;
     }
     .carousel {
       min-height: 60vh;

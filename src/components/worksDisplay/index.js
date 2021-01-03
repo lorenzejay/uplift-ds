@@ -6,15 +6,15 @@ import {
   WorkDisplayContent,
   WorkDisplayText,
 } from "./styles"
-const WorksDisplay = ({ title, workItems }) => {
+const WorksDisplay = ({ title, workItems, darkMode }) => {
   return (
-    <WorkDisplayWrapper>
+    <WorkDisplayWrapper darkMode={darkMode}>
       <RichTextCustom render={title} />
       {workItems.map((item, i) => {
         return (
           <WorkDisplayContent data-aos="flip-right" key={i}>
             <img src={item.works_image.url} alt="Portfolio Work" />
-            <WorkDisplayText>
+            <WorkDisplayText darkMode={darkMode}>
               <RichTextCustom render={item.works_title.raw} />
               <RichTextCustom render={item.works_description.raw} />
               <Button>

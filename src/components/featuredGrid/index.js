@@ -7,15 +7,16 @@ import {
   FeaturedSectionWrapper,
 } from "../../styles/featured_styles"
 
-const FeaturedGrid = ({ featuredItems, title }) => {
+const FeaturedGrid = ({ featuredItems, title, darkMode }) => {
   return (
-    <FeaturedSectionWrapper>
+    <FeaturedSectionWrapper darkMode={darkMode}>
       {title && <RichTextCustom render={title.raw} />}
       <FeaturedGrid3>
         {featuredItems.map((item, i) => {
           return (
             <div key={i}>
               <FeaturedBlock
+                darkMode={darkMode}
                 title={item.feature_title.raw}
                 content={item.content.raw}
                 image={item.featured_image.url}

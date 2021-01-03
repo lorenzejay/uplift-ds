@@ -14,11 +14,12 @@ export const ContactWrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin: 0 auto;
-
+  height: 100%;
+  /* margin: 0 auto; */
+  background-color: ${({ theme }) => theme.background};
   @media ${device.mobileS} {
     flex-direction: column;
-    margin: 10vh 0;
+    padding: 10vh 0;
   }
   @media ${device.laptop} {
     flex-direction: row;
@@ -37,12 +38,24 @@ export const Form = styled.form`
     width: 100%;
   }
 
+  h1,
+  p,
   input,
   textarea {
+    color: ${({ theme }) => theme.text};
+  }
+  input,
+  textarea {
+    border: 0.5px solid #333;
+    border-radius: 7px;
     margin: 15px 0;
-    padding: 3px 10px;
+    padding: 5px 15px;
     outline: none;
     width: inherit;
+    color: #333;
+    &::placeholder {
+      color: ${props => (props.darkMode ? "#333" : "#333")};
+    }
   }
   textarea {
     height: 15vh;
@@ -87,7 +100,7 @@ export const Button = styled.button`
   text-transform: uppercase;
 `
 export const ContactImage = styled.img`
-  width: 400px;
-  height: 400px;
+  width: 375px;
+  height: 375px;
   object-fit: cover;
 `

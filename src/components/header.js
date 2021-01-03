@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import "../styles/header.scss"
 import { device } from "../styles/default"
+import { FaRegLightbulb, FaLightbulb } from "react-icons/fa"
 
 const Navbar = styled.header`
   z-index: 100;
@@ -63,8 +64,9 @@ const Branding = styled.div`
     }
   }
 `
-const Header = () => {
+const Header = ({ theme, themeToggler }) => {
   const [burgerActive, setBurgerActive] = useState(false)
+
   const data = useStaticQuery(graphql`
     query NavQuery {
       allPrismicNavigation {
@@ -84,6 +86,7 @@ const Header = () => {
       }
     }
   `)
+
   const navigationLinks =
     data.allPrismicNavigation.edges[0].node.data.navigation_links
   return (
@@ -102,6 +105,14 @@ const Header = () => {
           )
         })}
       </NavLinks>
+      <span className="darkmode-btn">
+        {/* <Toggle theme={theme} toggleTheme={themeToggler} /> */}
+        {theme === "dark" ? (
+          <FaLightbulb onClick={themeToggler} />
+        ) : (
+          <FaRegLightbulb onClick={themeToggler} />
+        )}
+      </span>
       <div className="burger" onClick={() => setBurgerActive(!burgerActive)}>
         <div></div>
         <div></div>

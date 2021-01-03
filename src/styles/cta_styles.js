@@ -4,11 +4,7 @@ import { device } from "../styles/default"
 export const CtaWrapper = styled.section`
   width: 100%;
   padding: 5%;
-  background-image: linear-gradient(
-    130deg,
-    rgba(234, 99, 84, 1) 50%,
-    rgba(84, 234, 229, 1) 100%
-  );
+  background-color: #ea6354;
   h2 {
     color: white;
   }
@@ -16,6 +12,7 @@ export const CtaWrapper = styled.section`
   @media ${device.mobileS} {
     padding: 10%;
     h2 {
+      text-transform: uppercase;
       font-size: 1.5rem;
       text-align: center;
       margin-bottom: 5vh;

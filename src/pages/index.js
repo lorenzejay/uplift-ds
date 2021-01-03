@@ -1,11 +1,12 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import SliceZone from "../components/sliceZone"
 import SEO from "../components/seo"
 import AOS from "aos"
 import "aos/dist/aos.css"
-const IndexPage = props => {
+
+const IndexPage = () => {
   useEffect(() => {
     AOS.init({ duration: 2000 })
     AOS.refresh()
@@ -174,8 +175,8 @@ const IndexPage = props => {
   return (
     <Layout>
       <SEO
-        title="Uplift | Web Design and Development Solution"
-        description="Uplift Digital Solutions | Specializing in Web Design, Development, SEO, and Content Management."
+        title="Uplift | Los Angeles, California based Web Design and Development Services"
+        description="Uplift Digital Solutions | Specializes in Web Design, Development, and SEO. Based in Los Angeles."
       />
       <SliceZone body={data.allPrismicHomepage.edges[0].node.data.body} />
     </Layout>

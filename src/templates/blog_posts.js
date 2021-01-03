@@ -85,7 +85,7 @@ export default function BlogPosts(props) {
             alt="blog post hero"
           />
         </BlogPostHeader>
-        <div>
+        <div className="blog-content">
           <RichTextCustom
             render={prismicBlogPost.data.body[1].primary.text.raw}
           />

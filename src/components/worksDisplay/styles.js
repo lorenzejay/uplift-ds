@@ -3,9 +3,12 @@ import { device } from "../../styles/default"
 
 export const WorkDisplayWrapper = styled.section`
   padding: 5%;
+  background: ${({ theme }) => theme.background};
   @media ${device.mobileS} {
     padding: 10% 5%;
     h2 {
+      text-transform: uppercase;
+      color: ${({ theme }) => theme.text};
       text-align: center;
       font-size: 1.5rem;
     }
@@ -38,6 +41,10 @@ export const WorkDisplayText = styled.div`
 
   h3 {
     float: left;
+    color: ${({ theme }) => theme.text};
+  }
+  p {
+    color: ${({ theme }) => theme.text};
   }
   button {
     background: #ea5459;

@@ -50,7 +50,8 @@ const PageLinks = styled.div`
   }
 `
 
-const Footer = () => {
+const Footer = ({ darkMode }) => {
+  // console.log(darkMode)
   return (
     <FooterWrapper>
       <div className="social-links">

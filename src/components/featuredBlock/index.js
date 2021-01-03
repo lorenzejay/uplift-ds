@@ -2,9 +2,9 @@ import React, { useEffect } from "react"
 import RichTextCustom from "../richText"
 import { FeaturedBlockWrapper } from "../../styles/featured_styles"
 
-const FeaturedBlock = ({ title, content, image }) => {
+const FeaturedBlock = ({ title, content, image, darkMode }) => {
   return (
-    <FeaturedBlockWrapper data-aos="fade-up">
+    <FeaturedBlockWrapper data-aos="fade-up" darkMode={darkMode}>
       <div className="featured-image-wrapper">
         <img src={image} alt="featured" />
       </div>

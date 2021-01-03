@@ -2,12 +2,14 @@ import styled from "styled-components"
 import { device } from "./default"
 
 export const AboutWrapper = styled.div`
+  background-color: ${({ theme }) => theme.background};
   .about-hero {
     background: #ea6354;
     display: flex;
     align-items: center;
     justify-content: center;
     h2 {
+      color: white;
       text-transform: uppercase;
     }
   }
@@ -18,8 +20,12 @@ export const AboutWrapper = styled.div`
     justify-content: center;
     flex-direction: column;
     h3 {
+      color: ${({ theme }) => theme.text};
       width: 100%;
       float: left;
+    }
+    p {
+      color: ${({ theme }) => theme.text};
     }
   }
   @media ${device.mobileS} {

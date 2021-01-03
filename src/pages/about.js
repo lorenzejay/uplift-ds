@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import RichTextCustom from "../components/richText"
 import { AboutWrapper } from "../styles/about_styles"
+
 const About = () => {
   const data = useStaticQuery(graphql`
     query About {

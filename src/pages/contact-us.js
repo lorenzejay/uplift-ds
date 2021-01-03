@@ -1,7 +1,7 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
-import TextField from "@material-ui/core/TextField"
+// import TextField from "@material-ui/core/TextField"
 import RichTextCustom from "../components/richText"
 import linkResolver from "../utils/linkResolver"
 import {
@@ -46,8 +46,7 @@ const ContactUs = () => {
       }
     }
   `)
-  const classes = useStyles()
-  // console.log(data.allPrismicContactPage.edges[0].node.data)
+
   return (
     <Layout>
       <ContactWrapper>
@@ -56,7 +55,6 @@ const ContactUs = () => {
           description="Uplift Digital Solutions | Contact Us if you have any questions. We will respond to you within 48 Hours."
         />
         <Form
-          className={classes.root}
           method="post"
           netlify-honeypot="bot-field"
           data-netlify="true"
@@ -84,17 +82,17 @@ const ContactUs = () => {
               return (
                 <div key={i}>
                   {item.field_type === "textarea" ? (
-                    <TextField
+                    <textarea
                       id="outlined-multiline-flexible"
-                      label="Message"
+                      placeholder="Message"
                       multiline
                       rowsMax={4}
                       variant="outlined"
                     />
                   ) : (
-                    <TextField
+                    <input
                       id="outlined-basic"
-                      label={item.field_name}
+                      placeholder={item.field_name}
                       variant="outlined"
                       type={item.form_type}
                       name={item.field_name}

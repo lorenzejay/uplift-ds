@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import CtaGrid from "../ctaGrid"
 import FeaturedGrid from "../featuredGrid"
 import Hero from "../hero"
@@ -6,7 +6,15 @@ import PriceList from "../PriceList"
 import Testimonials from "../testimonials"
 import WorksDisplay from "../worksDisplay"
 import "./styles.scss"
-const SliceZone = ({ body }) => {
+const SliceZone = ({ body, darkMode }) => {
+  const [theme, setTheme] = useState()
+
+  useEffect(() => {
+    const themeSet = localStorage.getItem("theme")
+    setTheme(themeSet)
+    console.log(theme)
+  }, [theme])
+
   return (
     <div>
       {body.map((bodyContent, i) => {
@@ -22,6 +30,7 @@ const SliceZone = ({ body }) => {
         } else if (bodyContent.slice_type === "featured_grid") {
           return (
             <FeaturedGrid
+              darkMode={darkMode}
               key={i}
               featuredItems={bodyContent.items}
               title={bodyContent.primary.section_title}
@@ -38,6 +47,7 @@ const SliceZone = ({ body }) => {
         } else if (bodyContent.slice_type === "works_display") {
           return (
             <WorksDisplay
+              darkMode={darkMode}
               key={i}
               title={bodyContent.primary.works_title.raw}
               workItems={bodyContent.items}
