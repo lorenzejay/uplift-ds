@@ -1,5 +1,4 @@
 import React from "react"
-import "./styles.scss"
 import RichTextCustom from "../richText"
 import FeaturedBlock from "../featuredBlock"
 import {

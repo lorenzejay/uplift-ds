@@ -5,7 +5,7 @@ import Hero from "../hero"
 import PriceList from "../PriceList"
 import Testimonials from "../testimonials"
 import WorksDisplay from "../worksDisplay"
-import "./styles.scss"
+
 const SliceZone = ({ body, darkMode }) => {
   const [theme, setTheme] = useState()
 

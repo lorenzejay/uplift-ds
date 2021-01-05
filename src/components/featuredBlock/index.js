@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import RichTextCustom from "../richText"
 import { FeaturedBlockWrapper } from "../../styles/featured_styles"
 

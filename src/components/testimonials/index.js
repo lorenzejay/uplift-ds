@@ -1,5 +1,4 @@
 import React from "react"
-import "./styles.scss"
 import RichTextCustom from "../richText"
 import "bootstrap/dist/css/bootstrap.min.css"
 import {

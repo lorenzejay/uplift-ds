@@ -16,13 +16,6 @@ const Hero = ({ title, content, backgroundImage }) => {
       </div>
       <img src={backgroundImage} alt="Hero" />
     </HeroWrapper>
-
-    // <HeroWrapper backgroundImage={backgroundImage}>
-    //   <div>
-    //     <RichTextCustom render={title.raw} />
-    //     <p>{content}</p>
-    //   </div>
-    // </HeroWrapper>
   )
 }
 
