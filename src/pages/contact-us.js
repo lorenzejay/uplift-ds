@@ -86,6 +86,7 @@ const ContactUs = () => {
                       placeholder="Message"
                       multiline
                       rowsMax={4}
+                      name={item.field_name}
                       variant="outlined"
                     />
                   ) : (
