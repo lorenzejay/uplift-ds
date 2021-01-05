@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import React, { useState } from "react"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
-import "../styles/header.scss"
+import "../styles/header_styles.scss"
 import { device } from "../styles/default"
 import { FaRegLightbulb, FaLightbulb } from "react-icons/fa"
 
@@ -15,7 +15,16 @@ const Navbar = styled.header`
   padding: 0 5%;
   align-items: center;
   width: 100%;
+  background-color: ${({ theme }) => theme.darkContrast};
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  .icon {
+    color: ${({ theme }) => theme.text};
+  }
+  .burger {
+    div {
+      background-color: ${({ theme }) => theme.text};
+    }
+  }
 `
 const NavLinks = styled.div`
   margin-left: auto;
@@ -31,7 +40,7 @@ const NavLinks = styled.div`
 `
 const NavLink = styled.div`
   a {
-    color: #333;
+    color: ${({ theme }) => theme.text};
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
@@ -51,7 +60,7 @@ const Branding = styled.div`
   margin: auto 0;
   a {
     letter-spacing: 5px;
-    color: #333;
+    color: ${({ theme }) => theme.text};
     padding: 0 16px;
     text-decoration: none;
     font-size: 24px;
@@ -108,9 +117,9 @@ const Header = ({ theme, themeToggler }) => {
       <span className="darkmode-btn">
         {/* <Toggle theme={theme} toggleTheme={themeToggler} /> */}
         {theme === "dark" ? (
-          <FaLightbulb onClick={themeToggler} />
+          <FaLightbulb onClick={themeToggler} className="icon" />
         ) : (
-          <FaRegLightbulb onClick={themeToggler} />
+          <FaRegLightbulb onClick={themeToggler} className="icon" />
         )}
       </span>
       <div className="burger" onClick={() => setBurgerActive(!burgerActive)}>

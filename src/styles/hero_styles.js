@@ -12,7 +12,7 @@ export const HeroWrapper = styled.div`
   text-align: center;
   color: #333;
   padding: 0 5%;
-  background: ${({ theme }) => theme.hero};
+  background: ${({ theme }) => theme.background};
   gap: 5vw;
   img {
     width: 55%;
@@ -23,14 +23,13 @@ export const HeroWrapper = styled.div`
     flex-direction: column;
     h1 {
       font-size: 2rem;
-      color: black;
+      color: ${({ theme }) => theme.text};
     }
     p {
       font-size: 1.1rem;
       width: 75%;
       text-align: center;
-
-      color: #333;
+      color: ${({ theme }) => theme.body};
     }
   }
   button {

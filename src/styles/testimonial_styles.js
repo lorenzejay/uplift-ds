@@ -3,7 +3,7 @@ import { device } from "../styles/default"
 
 export const TestimonialWrapper = styled.section`
   padding: 5%;
-  background: ${({ theme }) => theme.hero};
+  background: ${({ theme }) => theme.background};
   @media ${device.mobileS} {
     h2 {
       color: ${({ theme }) => theme.text};
@@ -15,6 +15,27 @@ export const TestimonialWrapper = styled.section`
     .carousel {
       min-height: 60vh;
       width: 100%;
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        height: 100px;
+        width: 100px;
+        outline: black;
+        background-size: 100%, 100%;
+
+        background-image: none;
+      }
+      .carousel-control-next-icon:after {
+        content: ">";
+        font-size: 25px;
+        color: ${({ theme }) => theme.text};
+        font-weight: 700;
+      }
+      .carousel-control-prev-icon:after {
+        content: "<";
+        font-size: 25px;
+        font-weight: 700;
+        color: ${({ theme }) => theme.text};
+      }
       .carousel-item {
         padding: 5%;
       }
@@ -38,7 +59,7 @@ export const TestimonialCard = styled.div`
   display: flex;
 
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   border-bottom: 1px solid #333;
   @media ${device.mobileS} {
     padding: 0;
