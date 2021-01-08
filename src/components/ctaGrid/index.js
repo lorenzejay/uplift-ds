@@ -1,7 +1,8 @@
 import React from "react"
 import { CtaCard, CtaWrapper } from "../../styles/cta_styles"
 import RichTextCustom from "../richText"
-
+import Button from "../button/index"
+import { Link } from "gatsby"
 import "aos/dist/aos.css"
 
 const CtaGrid = ({ title, ctaItems }) => {
@@ -27,6 +28,9 @@ const CtaGrid = ({ title, ctaItems }) => {
             </CtaCard>
           )
         })}
+        <Link to="/contact-us">
+          <Button>Request Quote</Button>
+        </Link>
       </div>
     </CtaWrapper>
   )

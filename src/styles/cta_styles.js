@@ -14,6 +14,10 @@ export const CtaWrapper = styled.section`
 
   @media ${device.mobileS} {
     padding: 10%;
+    a {
+      width: 50%;
+      margin: 0 auto;
+    }
     h2 {
       text-transform: uppercase;
       font-size: 1.5rem;
@@ -70,6 +74,7 @@ export const CtaCard = styled.div`
     align-items: center;
     justify-content: flex-start;
     margin: 10vh 0;
+
     img {
       width: 40%;
       border-radius: 10px;
