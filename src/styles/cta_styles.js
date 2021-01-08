@@ -3,10 +3,13 @@ import { device } from "../styles/default"
 
 export const CtaWrapper = styled.section`
   width: 100%;
-  padding: 5%;
-  background-color: #ea6354;
-  h2 {
-    color: white;
+  padding: 10% 5%;
+
+  background: ${({ theme }) => theme.background};
+  h2,
+  h3,
+  p {
+    color: ${({ theme }) => theme.text};
   }
 
   @media ${device.mobileS} {
@@ -26,11 +29,20 @@ export const CtaWrapper = styled.section`
       font-size: 1.62671rem;
     }
   }
+  .card-wrapper {
+    @media ${device.mobileS} {
+      display: flex;
+      flex-direction: column;
+    }
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5vw;
+  }
 `
 export const CtaCard = styled.div`
   margin: 3vh 0;
   display: flex;
-  flex-direction: ${props => (props.index % 2 === 0 ? "row" : "row-reverse")};
+  flex-direction: column-reverse;
   align-items: center;
   justify-content: space-around;
   gap: 3vw;
@@ -38,7 +50,8 @@ export const CtaCard = styled.div`
     h3,
     h4,
     p {
-      color: white;
+      color: ${({ theme }) => theme.text};
+      text-align: center;
     }
     h3 {
       text-transform: uppercase;
@@ -48,22 +61,22 @@ export const CtaCard = styled.div`
     }
 
     p {
-      width: 85%;
       line-height: 1.8rem;
     }
   }
   @media ${device.mobileS} {
     width: 100%;
-    flex-direction: column;
+
     align-items: center;
     justify-content: flex-start;
     margin: 10vh 0;
     img {
-      width: 100%;
+      width: 40%;
       border-radius: 10px;
       object-fit: cover;
     }
-    h2 {
+    h3 {
+      text-align: center;
       font-size: 1.5rem;
     }
     .cta-card-text {
@@ -78,17 +91,13 @@ export const CtaCard = styled.div`
       }
     }
   }
-  @media ${device.laptop} {
-    flex-direction: ${props => (props.index % 2 === 0 ? "row" : "row-reverse")};
-    img {
-      width: 35%;
-    }
-  }
+
   @media ${device.laptop} {
     flex-direction: ${props => (props.index % 2 === 0 ? "row" : "row-reverse")};
     .cta-card-text {
       h3,
       p {
+        text-align: start;
         margin: 15px 0;
         float: ${props => (props.index % 2 !== 0 ? "right" : "")};
         width: 90%;

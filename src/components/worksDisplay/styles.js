@@ -21,6 +21,7 @@ export const WorkDisplayWrapper = styled.section`
 `
 
 export const WorkDisplayContent = styled.div`
+  padding: 5%;
   display: flex;
   margin: 10vh 0;
   flex-direction: column;
