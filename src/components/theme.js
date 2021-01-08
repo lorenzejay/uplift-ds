@@ -4,6 +4,7 @@ export const lightTheme = {
   toggleBorder: "#FFF",
   background: "white",
   hero: "#c6f3f8",
+  homeBg: "75%",
 }
 export const darkTheme = {
   body: "#e4e6eb",
@@ -12,4 +13,5 @@ export const darkTheme = {
   background: "#181818",
   hero: "#54dbea",
   darkContrast: "#242526",
+  homeBg: "75%",
 }

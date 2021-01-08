@@ -16,6 +16,7 @@ export const ContactWrapper = styled.section`
   justify-content: space-around;
   height: 100%;
   /* margin: 0 auto; */
+
   background-color: ${({ theme }) => theme.background};
   @media ${device.mobileS} {
     flex-direction: column;
