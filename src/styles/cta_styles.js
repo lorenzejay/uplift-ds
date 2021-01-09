@@ -15,12 +15,15 @@ export const CtaWrapper = styled.section`
   @media ${device.mobileS} {
     padding: 10%;
     a {
-      width: 50%;
-      margin: 0 auto 15vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20vh;
     }
     button {
       background-color: #ea6354;
       color: white;
+      text-transform: uppercase;
     }
     h2 {
       text-transform: uppercase;
@@ -35,6 +38,9 @@ export const CtaWrapper = styled.section`
     h2 {
       text-align: start;
       font-size: 1.62671rem;
+    }
+    a button {
+      margin: 0 auto;
     }
   }
   .card-wrapper {

@@ -86,7 +86,6 @@ export const BlogPreviewGrid = styled.div`
       width: 75%;
       img {
         margin: 0 auto;
-        width: 35%;
       }
     }
   }
@@ -100,8 +99,7 @@ export const BlogPreviewGrid = styled.div`
       }
 
       img {
-        width: 45%;
-        height: auto;
+        width: 35%;
       }
     }
   }
