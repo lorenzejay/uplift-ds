@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 // import TextField from "@material-ui/core/TextField"
 import RichTextCustom from "../components/richText"
 import linkResolver from "../utils/linkResolver"
 import {
-  useStyles,
   ContactImage,
   ContactWrapper,
   Form,

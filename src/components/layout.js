@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import "./layout.css"
@@ -16,7 +16,6 @@ const MainWrapper = styled.main`
 
 const Layout = ({ children }) => {
   const [theme, themeToggler] = useDarkMode()
-  const themeMode = theme === "light" ? lightTheme : darkTheme
 
   // console.log("theme", theme)
   return (

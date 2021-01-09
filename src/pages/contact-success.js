@@ -4,7 +4,6 @@ import SEO from "../components/seo"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import Button from "../components/button"
-import { device, primary } from "../styles/default"
 
 export const ContactWrapper = styled.section`
   height: 50vh;
