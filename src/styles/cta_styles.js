@@ -16,7 +16,11 @@ export const CtaWrapper = styled.section`
     padding: 10%;
     a {
       width: 50%;
-      margin: 0 auto;
+      margin: 0 auto 15vh;
+    }
+    button {
+      background-color: #ea6354;
+      color: white;
     }
     h2 {
       text-transform: uppercase;
