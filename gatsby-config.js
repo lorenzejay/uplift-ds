@@ -5,9 +5,9 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Uplift Digital Solutions`,
-    defaultTitle: `Uplift Digital Solutions | Web Design and Development.`,
+    defaultTitle: `Uplift Digital Solutions | Los Angeles Web Design and Development.`,
 
-    description: `Los Angeles based Web Design and Development Solutions.`,
+    description: `Los Angeles Web Design and Development Agency. Offers modern and custom made websites leverging technologies to create responsive, lead generating and increasing revenue websites. `,
     defaultDescription: `Los Angeles based Web Design and Development Solutions. We don't see a website as something every business should have because it's important. We view websites as a crucial tool for growing a business.`,
     author: `Lorenze Jay`,
     url: "https://upliftdigitalsolutions.com/",
