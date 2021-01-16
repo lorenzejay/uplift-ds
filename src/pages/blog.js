@@ -96,6 +96,7 @@ const BlogHomePage = () => {
               <img
                 src={node.data.body[0].primary.image.url}
                 alt="Blog Preview media"
+                title="Blog Home Page Image"
               />
               <div>
                 <p className="blog-preview-date">{node.data.release_date}</p>

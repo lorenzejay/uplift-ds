@@ -18,7 +18,11 @@ const Testimonials = ({ title, testimonials }) => {
             <Carousel.Item key={i}>
               <TestimonialImgAndQuote>
                 <ImageCropper>
-                  <img src={item.author_image.url} alt="Testimonial Author" />
+                  <img
+                    src={item.author_image.url}
+                    alt="Testimonial Author"
+                    title="Testimonials - What our clients have said."
+                  />
                 </ImageCropper>
                 <RichTextCustom render={item.testimonial_author.raw} />
                 <RichTextCustom render={item.testimonial_content.raw} />

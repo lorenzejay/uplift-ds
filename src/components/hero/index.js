@@ -30,7 +30,11 @@ const Hero = ({ title, content, backgroundImage }) => {
             <Link to="/contact-us">Contact Us</Link>
           </Button>
         </div>
-        <img src={backgroundImage} alt="Hero" />
+        <img
+          src={backgroundImage}
+          alt="Hero"
+          title="Uplift Digital Solutions Main Image"
+        />
       </div>
     </HeroWrapper>
   )

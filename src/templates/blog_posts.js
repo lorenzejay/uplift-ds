@@ -83,6 +83,7 @@ export default function BlogPosts(props) {
             src={prismicBlogPost.data.body[0].primary.image.url}
             style={{ width: "45%" }}
             alt="blog post hero"
+            title="Blog Post Hero Image"
           />
         </BlogPostHeader>
         <div className="blog-content">

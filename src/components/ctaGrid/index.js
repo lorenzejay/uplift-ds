@@ -23,7 +23,8 @@ const CtaGrid = ({ title, ctaItems }) => {
               <img
                 data-aos="fade-left"
                 src={item.cta_image.url}
-                alt={item.cta_section_title.raw}
+                alt="Web Design and Developement - Our Process"
+                title="Uplift Digitial Solutions - Our Process"
               />
             </CtaCard>
           )

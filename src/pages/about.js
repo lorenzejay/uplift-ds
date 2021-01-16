@@ -42,6 +42,7 @@ const About = () => {
           <img
             src={aboutData.about_image.url}
             alt="Rockets Flying in the Air."
+            title="About Us Image"
           />
           <RichTextCustom render={aboutData.about_content.raw} />
         </div>
