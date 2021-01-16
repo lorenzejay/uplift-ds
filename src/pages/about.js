@@ -30,6 +30,10 @@ const About = () => {
   const aboutData = data.allPrismicAbout.edges[0].node.data
   return (
     <Layout>
+      <SEO
+        title="About Us | Uplift Digital Solutions, Los Angeles, CA Based Web Design, Development, SEO and Content Management."
+        description="Uplift Digital Solutions | Learn more about us, our philosophy of the importance of websites and how we build them."
+      />
       <AboutWrapper>
         <div className="about-hero">
           <RichTextCustom render={aboutData.about_title.raw} />

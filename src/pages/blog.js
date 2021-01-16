@@ -71,7 +71,7 @@ const BlogHomePage = () => {
   return (
     <Layout>
       <SEO
-        title="Uplift | Web Design and Development Blog "
+        title="Web Design and Development Blog | Uplift Digital Solutions, Los Angeles, CA Based Web Design, Development, SEO and Content Management."
         description="Uplift Digital Solutions | We write blogs encompassing the topics of Web Design and Development, Business Tips, SEO, importance of social media, content creation any many more."
       />
       <BlogHomepageWrapper>

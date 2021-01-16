@@ -68,7 +68,7 @@ export default function BlogPosts(props) {
   return (
     <Layout>
       <SEO
-        title={`Uplift | ${prismicBlogPost.data.title.raw[0].text}`}
+        title={`${prismicBlogPost.data.title.raw[0].text} |  Uplift Digital Solutions, Los Angeles, CA Based Web Design, Development, SEO and Content Management.`}
         description={`Uplift Digital Solutions | ${prismicBlogPost.data.preview_description.text}`}
       />
       <BlogPostWrapper>

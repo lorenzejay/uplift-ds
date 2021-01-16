@@ -50,7 +50,7 @@ const ContactUs = () => {
     <Layout>
       <ContactWrapper>
         <SEO
-          title="Uplift | Contact Us"
+          title="Contact Us | Uplift Digital Solutions, Los Angeles, CA Based Web Design, Development, SEO and Content Management."
           description="Uplift Digital Solutions | Contact Us if you have any questions. We will respond to you within 48 Hours."
         />
         <Form

@@ -28,7 +28,7 @@ const _404Page = styled.section`
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="Uplift | 404" />
+    <SEO title="404 |  Uplift Digital Solutions, Los Angeles, CA Based Web Design, Development, SEO and Content Management." />
     <_404Page>
       <h1>404</h1>
       <p>This page does not exist :(</p>

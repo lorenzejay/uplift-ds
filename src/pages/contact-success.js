@@ -25,7 +25,7 @@ const ContactSucess = () => {
   return (
     <Layout>
       <SEO
-        title="Uplift | Contact"
+        title="Contact | Uplift Digital Solutions, Los Angeles, CA Based Web Design, Development, SEO and Content Management."
         description="Uplift Digital Solutions | Specializing in Web Design, Development, SEO, and Content Management."
       />
       <ContactWrapper>
