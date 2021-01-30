@@ -173,7 +173,7 @@ const IndexPage = () => {
   `)
 
   return (
-    <Layout>
+    <Layout homePage={true}>
       <SEO
         title="Los Angeles Web Design and Development | Uplift Digital Solutions"
         description="Uplift Digital Solutions specializes in Web Design and Development, SEO and content management based in Los Angeles, California. Our websites are built focused on being a tool to grow your business."

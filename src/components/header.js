@@ -1,134 +1,164 @@
-import { Link } from "gatsby"
-import React, { useState } from "react"
+import React from "react"
+import { Link as LinkG } from "gatsby"
+import PropTypes from "prop-types"
+import { FaBars } from "react-icons/fa"
 import styled from "styled-components"
-import { graphql, useStaticQuery } from "gatsby"
-import "../styles/header_styles.scss"
-import { device } from "../styles/default"
 import { FaRegLightbulb, FaLightbulb } from "react-icons/fa"
 
-const Navbar = styled.header`
-  z-index: 100;
-  height: 10vh;
+export const Nav = styled.header`
+  //handle transitions here
+  /* background: #fff; */
+
+  height: 80px;
+  margin-top: -80px;
   display: flex;
-  position: relative;
-  background: white;
-  padding: 0 5%;
   align-items: center;
-  width: 100%;
-  background-color: ${({ theme }) => theme.darkContrast};
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  .icon {
-    color: ${({ theme }) => theme.text};
-  }
-  .burger {
-    div {
-      background-color: ${({ theme }) => theme.text};
-    }
-  }
+  font-size: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 60;
 `
-const NavLinks = styled.div`
-  margin-left: auto;
+
+export const NavContainer = styled.div`
   display: flex;
-  justify-content: space-around;
-  width: 20%;
-  @media ${device.tablet} {
-    width: 40%;
-  }
-  @media ${device.laptop} {
-    width: 30%;
-  }
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  padding: 0 12px;
+  /* max-width: 1100px; */
 `
-const NavLink = styled.div`
-  a {
-    color: ${({ theme }) => theme.text};
+
+//we are grabbing the link from gatsby link
+export const NavLink = styled(LinkG)`
+  color: ${props => (props.homePage ? "#fff" : "#000")};
+  justify-self: flex-start;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  margin-left: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  &:hover {
     text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  @media ${device.desktop} {
-    a {
-      font-size: 1.8rem;
-    }
+    color: #ea5454;
   }
 `
-const Branding = styled.div`
-  margin: auto 0;
-  a {
-    letter-spacing: 5px;
-    color: ${({ theme }) => theme.text};
-    padding: 0 16px;
+
+export const MobileIcon = styled.div`
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 35%);
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: ${props => (props.homePage ? "#fff" : "#000")};
+  }
+`
+export const NavMenu = styled.ul`
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  text-align: center;
+  margin-right: 22px;
+  margin-top: auto;
+  height: 100%;
+  .darkmode-btn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`
+
+export const NavItem = styled.li`
+  height: 80px;
+`
+
+//scroll links
+export const NavLinks = styled(LinkG)`
+  color: ${props => (props.homePage ? "#fff" : "#000")};
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
+  &:hover {
+    color: ${props => (props.homePage ? "#fff" : "#000")};
     text-decoration: none;
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
   }
-  @media ${device.desktop} {
-    .nav-logo {
-      font-size: 3rem;
-    }
+  &:active {
+    border-bottom: 3px solid #fff;
   }
 `
-const Header = ({ theme, themeToggler }) => {
-  const [burgerActive, setBurgerActive] = useState(false)
 
-  const data = useStaticQuery(graphql`
-    query NavQuery {
-      allPrismicNavigation {
-        edges {
-          node {
-            data {
-              branding
-              navigation_links {
-                label
-                link {
-                  uid
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  const navigationLinks =
-    data.allPrismicNavigation.edges[0].node.data.navigation_links
+const Header = ({ theme, themeToggler, toggle, homePage }) => {
   return (
-    <Navbar className="navbar">
-      <Branding>
-        <Link to="/" className="nav-logo">
-          {data.allPrismicNavigation.edges[0].node.data.branding}
-        </Link>
-      </Branding>
-      <NavLinks className={`nav-links ${burgerActive ? "nav-active" : ""}`}>
-        {navigationLinks.map(link => {
-          return (
-            <NavLink key={link.link.uid}>
-              <Link to={`/${link.link.uid}`}>{link.label}</Link>
-            </NavLink>
-          )
-        })}
-      </NavLinks>
-      <span className="darkmode-btn">
-        {/* <Toggle theme={theme} toggleTheme={themeToggler} /> */}
-        {theme === "dark" ? (
-          <FaLightbulb onClick={themeToggler} className="icon" />
-        ) : (
-          <FaRegLightbulb onClick={themeToggler} className="icon" />
-        )}
-      </span>
-      <div className="burger" onClick={() => setBurgerActive(!burgerActive)}>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </Navbar>
+    <>
+      <Nav>
+        <NavContainer>
+          <NavLink to="/" homePage={homePage}>
+            Uplift
+          </NavLink>
+
+          <MobileIcon onClick={toggle} homePage={homePage}>
+            <FaBars />
+          </MobileIcon>
+
+          <NavMenu>
+            <span className="darkmode-btn">
+              {/* <Toggle theme={theme} toggleTheme={themeToggler} /> */}
+              {theme === "dark" ? (
+                <FaLightbulb
+                  onClick={themeToggler}
+                  className="icon"
+                  style={{ color: "#fff" }}
+                />
+              ) : (
+                <FaRegLightbulb
+                  onClick={themeToggler}
+                  className="icon"
+                  style={{ color: "#fff" }}
+                />
+              )}
+            </span>
+            <NavItem>
+              <NavLinks to="/about" homePage={homePage}>
+                About
+              </NavLinks>
+            </NavItem>
+
+            <NavItem>
+              <NavLinks to="/contact-us">Contact</NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks to="/blog">Blog</NavLinks>
+            </NavItem>
+          </NavMenu>
+        </NavContainer>
+      </Nav>
+    </>
   )
+}
+
+Header.propTypes = {
+  siteTitle: PropTypes.string,
+}
+
+Header.defaultProps = {
+  siteTitle: ``,
+  homePage: false,
 }
 
 export default Header

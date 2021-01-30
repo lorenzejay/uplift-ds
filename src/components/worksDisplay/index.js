@@ -12,11 +12,12 @@ const WorksDisplay = ({ title, workItems, darkMode }) => {
       <RichTextCustom render={title} />
       {workItems.map((item, i) => {
         return (
-          <WorkDisplayContent data-aos="flip-right" key={i}>
+          <WorkDisplayContent key={i}>
             <img
               src={item.works_image.url}
               alt="Portfolio Work"
               title="Our Previous Works"
+              loading="lazy"
             />
             <WorkDisplayText darkMode={darkMode}>
               <RichTextCustom render={item.works_title.raw} />

@@ -115,7 +115,8 @@ export const FeaturedBlockWrapper = styled.section`
     }
     .featured-title {
       height: 10vh;
-      margin-top: auto;
+
+      margin-top: 0;
       h3 {
         font-size: 1.3rem;
       }
