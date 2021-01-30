@@ -88,8 +88,8 @@ const SideBar = ({ isOpen, toggle, theme, themeToggler }) => {
               />
             )}
           </span>
-          <SidebarLink to="/about">About</SidebarLink>
           <SidebarLink to="/">Home</SidebarLink>
+          <SidebarLink to="/about">About</SidebarLink>
           <SidebarLink to="/contact-us">Contact</SidebarLink>
           <SidebarLink to="/blog">Blog</SidebarLink>
         </SideBarMenu>
