@@ -41,6 +41,10 @@ export const SideBarMenu = styled.ul`
   display: flex;
   flex-direction: column;
   text-align: center;
+  .darkmode-btn {
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
 `
 
 export const SidebarLink = styled(Link)`
@@ -57,10 +61,6 @@ export const SidebarLink = styled(Link)`
   &:hover {
     color: #fff;
     transition: 0.2s ease-in-out;
-  }
-  .darkmode-btn {
-    cursor: pointer;
-    margin-bottom: 15px;
   }
 `
 
@@ -88,9 +88,10 @@ const SideBar = ({ isOpen, toggle, theme, themeToggler }) => {
               />
             )}
           </span>
+          <SidebarLink to="/about">About</SidebarLink>
           <SidebarLink to="/">Home</SidebarLink>
-          <SidebarLink to="/contact">Contact</SidebarLink>
-          <SidebarLink to="/pricing">Packages</SidebarLink>
+          <SidebarLink to="/contact-us">Contact</SidebarLink>
+          <SidebarLink to="/blog">Blog</SidebarLink>
         </SideBarMenu>
       </SidebarWrapper>
     </SidebarContainer>
