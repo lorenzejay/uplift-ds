@@ -69,8 +69,8 @@ export const NavLogo = styled(LinkG)`
 
 export const MobileIcon = styled.div`
   display: none;
+  color: ${props => (props.homepage ? "#fff" : "#000")};
 
-  color: ${({ theme }) => theme.text};
   @media screen and (max-width: 768px) {
     display: block;
     position: absolute;

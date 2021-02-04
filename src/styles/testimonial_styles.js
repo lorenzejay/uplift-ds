@@ -51,6 +51,7 @@ export const TestimonialWrapper = styled.section`
     }
     .carousel {
       height: 60vh;
+      margin-bottom: 10vh;
     }
   }
 `

@@ -106,7 +106,7 @@ export const FeaturedBlockWrapper = styled.section`
   }
   @media ${device.laptop} {
     width: 25vw;
-    height: 60vh;
+    height: 65vh;
     justify-content: space-evenly;
     border-radius: 20px;
     .featured-image-wrapper {

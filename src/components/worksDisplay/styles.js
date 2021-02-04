@@ -50,9 +50,9 @@ export const WorkDisplayText = styled.div`
   }
   button {
     background: #ea6354;
-    padding: 4px 30px;
+    padding: 5px 25px;
     a {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       color: white;
       text-decoration: none;
     }
