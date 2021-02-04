@@ -53,11 +53,10 @@ export const NavContainer = styled.div`
 //   }
 // `
 export const NavLogo = styled(LinkG)`
-  color: ${({ theme }) => theme.text};
-  display: flex;
-  align-items: center;
+  color: ${props => (props.homepage ? "#fff" : "#000")};
   text-decoration: none;
-  padding: 0 1rem;
+  display: grid;
+  margin-top: 40px;
   height: 100%;
   cursor: pointer;
   text-transform: uppercase;
@@ -95,9 +94,6 @@ export const NavMenu = styled.ul`
     align-items: center;
     cursor: pointer;
   }
-  .icon {
-    color: ${({ theme }) => theme.text};
-  }
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -109,7 +105,7 @@ export const NavItem = styled.li`
 
 //scroll links
 export const NavLinks = styled(LinkG)`
-  color: ${({ theme }) => theme.text};
+  color: ${props => (props.homepage ? "#fff" : "#000")};
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -117,44 +113,59 @@ export const NavLinks = styled(LinkG)`
   height: 100%;
   cursor: pointer;
   &:hover {
-    color: ${({ theme }) => theme.text};
+    color: ${props => (props.homepage ? "#fff" : "#000")};
     text-decoration: none;
   }
 `
 
-const Header = ({ theme, themeToggler, toggle, homePage }) => {
+const Header = ({ theme, themeToggler, toggle, homepage }) => {
+  // console.log(homepage)
   return (
     <>
       <Nav>
         <NavContainer>
-          <NavLogo to="/" homePage={homePage} style={{ letterSpacing: 5 }}>
+          <NavLogo to="/" homepage={homepage} style={{ letterSpacing: 5 }}>
             Uplift
           </NavLogo>
 
-          <MobileIcon onClick={toggle} homePage={homePage}>
+          <MobileIcon onClick={toggle} homepage={homepage}>
             <FaBars />
           </MobileIcon>
 
           <NavMenu>
-            <span className="darkmode-btn">
+            <span className="darkmode-btn" homepage={homepage}>
               {/* <Toggle theme={theme} toggleTheme={themeToggler} /> */}
               {theme === "dark" ? (
-                <FaLightbulb onClick={themeToggler} className="icon" />
+                <FaLightbulb
+                  onClick={themeToggler}
+                  className="icon"
+                  homepage={homepage}
+                  style={{ color: homepage ? "#fff" : "#000" }}
+                />
               ) : (
-                <FaRegLightbulb onClick={themeToggler} className="icon" />
+                <FaRegLightbulb
+                  onClick={themeToggler}
+                  className="icon"
+                  homepage={homepage}
+                  style={{ color: homepage ? "#fff" : "#000" }}
+                />
               )}
             </span>
             <NavItem>
-              <NavLinks to="/about" homePage={homePage}>
+              <NavLinks to="/about" homepage={homepage}>
                 About
               </NavLinks>
             </NavItem>
 
             <NavItem>
-              <NavLinks to="/contact-us">Contact</NavLinks>
+              <NavLinks to="/contact-us" homepage={homepage}>
+                Contact
+              </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="/blog">Blog</NavLinks>
+              <NavLinks to="/blog" homepage={homepage}>
+                Blog
+              </NavLinks>
             </NavItem>
           </NavMenu>
         </NavContainer>
@@ -169,7 +180,7 @@ Header.propTypes = {
 
 Header.defaultProps = {
   siteTitle: ``,
-  homePage: false,
+  homepage: false,
 }
 
 export default Header

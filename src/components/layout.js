@@ -15,7 +15,7 @@ const MainWrapper = styled.main`
   margin: 0 auto;
 `
 
-const Layout = ({ children, homePage }) => {
+const Layout = ({ children, homepage }) => {
   const [theme, themeToggler] = useDarkMode()
   const [isOpen, setIsOpen] = useState(false)
 
@@ -38,7 +38,7 @@ const Layout = ({ children, homePage }) => {
           theme={theme}
           themeToggler={themeToggler}
           toggle={toggle}
-          homePage={homePage}
+          homepage={homepage}
         />
         <MainWrapper>{children}</MainWrapper>
         <Footer />
