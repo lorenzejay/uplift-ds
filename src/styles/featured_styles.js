@@ -17,9 +17,9 @@ export const FeaturedSectionWrapper = styled.section`
     }
   }
   @media ${device.laptop} {
-    padding: 5%;
+    padding: 5% 10vw;
     h2 {
-      font-size: 1.8rem;
+      font-size: 2rem;
       text-align: start;
     }
   }

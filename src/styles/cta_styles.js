@@ -34,10 +34,10 @@ export const CtaWrapper = styled.section`
   }
 
   @media ${device.laptop} {
-    padding: 5%;
+    padding: 5% 10vw;
     h2 {
       text-align: start;
-      font-size: 1.62671rem;
+      font-size: 2rem;
     }
     a button {
       margin: 0 auto;

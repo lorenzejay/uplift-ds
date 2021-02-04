@@ -26,32 +26,52 @@ export const NavContainer = styled.div`
   height: 80px;
   z-index: 1;
   width: 100%;
-  padding: 0 12px;
+  padding: 0 5vw;
+  @media screen and (min-width: 1024px) {
+    padding: 0 10vw;
+  }
   /* max-width: 1100px; */
 `
 
 //we are grabbing the link from gatsby link
-export const NavLink = styled(LinkG)`
-  color: ${props => (props.homePage ? "#fff" : "#000")};
-  justify-self: flex-start;
-  cursor: pointer;
-  font-size: 1.5rem;
+// export const NavLink = styled(LinkG)`
+//   color: ${props => (props.homePage ? "#fff" : "#000")};
+//   color: #fff;
+//   justify-self: flex-start;
+//   cursor: pointer;
+//   font-size: 1.5rem;
+//   display: flex;
+//   align-items: center;
+//   margin-left: 6px;
+//   font-weight: bold;
+//   text-decoration: none;
+//   text-transform: uppercase;
+//   letter-spacing: 5px;
+//   &:hover {
+//     text-decoration: none;
+//     color: #ea5454;
+//   }
+// `
+export const NavLogo = styled(LinkG)`
+  color: ${({ theme }) => theme.text};
   display: flex;
   align-items: center;
-  margin-left: 6px;
-  font-weight: bold;
   text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
   text-transform: uppercase;
-  letter-spacing: 5px;
+  font-size: 32px;
   &:hover {
-    text-decoration: none;
     color: #ea5454;
+    text-decoration: none;
   }
 `
 
 export const MobileIcon = styled.div`
   display: none;
 
+  color: ${({ theme }) => theme.text};
   @media screen and (max-width: 768px) {
     display: block;
     position: absolute;
@@ -60,7 +80,6 @@ export const MobileIcon = styled.div`
     transform: translate(-100%, 35%);
     font-size: 1.8rem;
     cursor: pointer;
-    color: ${props => (props.homePage ? "#fff" : "#000")};
   }
 `
 export const NavMenu = styled.ul`
@@ -76,6 +95,9 @@ export const NavMenu = styled.ul`
     align-items: center;
     cursor: pointer;
   }
+  .icon {
+    color: ${({ theme }) => theme.text};
+  }
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -87,7 +109,7 @@ export const NavItem = styled.li`
 
 //scroll links
 export const NavLinks = styled(LinkG)`
-  color: ${props => (props.homePage ? "#fff" : "#000")};
+  color: ${({ theme }) => theme.text};
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -95,11 +117,8 @@ export const NavLinks = styled(LinkG)`
   height: 100%;
   cursor: pointer;
   &:hover {
-    color: ${props => (props.homePage ? "#fff" : "#000")};
+    color: ${({ theme }) => theme.text};
     text-decoration: none;
-  }
-  &:active {
-    border-bottom: 3px solid #fff;
   }
 `
 
@@ -108,9 +127,9 @@ const Header = ({ theme, themeToggler, toggle, homePage }) => {
     <>
       <Nav>
         <NavContainer>
-          <NavLink to="/" homePage={homePage}>
+          <NavLogo to="/" homePage={homePage} style={{ letterSpacing: 5 }}>
             Uplift
-          </NavLink>
+          </NavLogo>
 
           <MobileIcon onClick={toggle} homePage={homePage}>
             <FaBars />
@@ -120,17 +139,9 @@ const Header = ({ theme, themeToggler, toggle, homePage }) => {
             <span className="darkmode-btn">
               {/* <Toggle theme={theme} toggleTheme={themeToggler} /> */}
               {theme === "dark" ? (
-                <FaLightbulb
-                  onClick={themeToggler}
-                  className="icon"
-                  style={{ color: "#fff" }}
-                />
+                <FaLightbulb onClick={themeToggler} className="icon" />
               ) : (
-                <FaRegLightbulb
-                  onClick={themeToggler}
-                  className="icon"
-                  style={{ color: "#fff" }}
-                />
+                <FaRegLightbulb onClick={themeToggler} className="icon" />
               )}
             </span>
             <NavItem>

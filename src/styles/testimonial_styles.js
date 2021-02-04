@@ -43,12 +43,14 @@ export const TestimonialWrapper = styled.section`
   }
 
   @media ${device.laptop} {
+    padding: 5% 10vw;
     h2 {
       text-align: start;
       margin: 0;
+      font-size: 2rem;
     }
     .carousel {
-      min-height: 60vh;
+      height: 60vh;
     }
   }
 `

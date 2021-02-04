@@ -9,11 +9,12 @@ export const WorkDisplayWrapper = styled.section`
     h2 {
       text-transform: uppercase;
       color: ${({ theme }) => theme.text};
-      text-align: center;
+      text-align: start;
       font-size: 1.5rem;
     }
   }
   @media ${device.laptop} {
+    padding: 5% 10vw;
     h2 {
       font-size: 2rem;
     }

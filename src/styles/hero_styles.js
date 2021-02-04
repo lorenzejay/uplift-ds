@@ -27,7 +27,7 @@ export const HeroWrapper = styled(BackgroundImage)`
     justify-content: flex-start;
     text-align: center;
     color: #333;
-    padding: 0 5%;
+
     img {
       width: 55%;
     }
@@ -78,29 +78,38 @@ export const HeroWrapper = styled(BackgroundImage)`
 
     @media ${device.tablet} {
       height: 60vh;
-      flex-direction: row;
-      justify-content: flex-start;
+      flex-direction: column-reverse;
+
       .hero-text {
         display: flex;
+        align-items: flex-center;
+      }
+      img {
+        width: 40%;
+        margin-top: 5vh;
+      }
+    }
+    @media ${device.laptop} {
+      height: 90vh;
+      padding: 10vh 10vw 0;
+      flex-direction: row;
+      justify-items: center;
+      .hero-text {
+        min-height: 25vh;
         align-items: flex-start;
         h1,
         p {
           text-align: start;
         }
-      }
-      img {
-        width: 40%;
-      }
-    }
-    @media ${device.laptop} {
-      height: 90vh;
-      padding-top: 10vh;
-      .hero-text {
         h1 {
           font-size: 2.3rem;
         }
         p {
           font-size: 1rem;
+          line-height: 2rem;
+        }
+        img {
+          width: 60%;
         }
       }
       justify-content: space-between;
@@ -115,22 +124,26 @@ export const HeroWrapper = styled(BackgroundImage)`
       }
     }
     @media ${device.laptopL} {
-      height: 60vh;
+      height: 90vh;
+
       img {
-        width: 30%;
+        width: 40%;
       }
       .hero-text {
+        h1 {
+          font-size: 3.5rem;
+        }
         p {
-          width: 55%;
+          font-size: 1.5rem;
         }
       }
     }
     @media ${device.desktop} {
-      height: 75vh;
+      height: 65vh;
 
       .hero-text {
         h1 {
-          font-size: 3.5rem;
+          font-size: 4rem;
         }
         p {
           font-size: 2rem;
