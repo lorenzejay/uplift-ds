@@ -30,7 +30,7 @@ export const FeaturedSectionWrapper = styled.section`
   }
 `
 export const FeaturedGrid3 = styled.section`
-  display: flex;
+  /* display: flex;
   align-items: center;
   justify-content: space-around;
   @media ${device.mobileS} {
@@ -40,21 +40,21 @@ export const FeaturedGrid3 = styled.section`
   }
   @media ${device.laptop} {
     flex-direction: row;
-  }
+  } */
 `
 
 export const FeaturedBlockWrapper = styled.section`
-  padding: 20px;
+  /* padding: 20px;
   margin: 20px 0;
-  border-radius: 24px;
-  background: ${({ theme }) => theme.darkContrast};
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 24px; */
+  /* background: ${({ theme }) => theme.darkContrast}; */
+  /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); */
   /* background: #e0e5ec;
   box-shadow: -29px -29px 57px #bec3c9, 29px 29px 57px #ffffff; */
 
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
   /* border-right: #ea6354 4px solid; */
   transition: transform 0.5s ease-in;
   &:hover {
@@ -62,16 +62,16 @@ export const FeaturedBlockWrapper = styled.section`
   }
 
   .featured-title {
-    text-transform: uppercase;
+    /* text-transform: uppercase;
     width: 100%;
-    text-align: center;
+    text-align: center; */
     color: ${({ theme }) => theme.text};
   }
   p {
     color: ${({ theme }) => theme.text};
   }
 
-  @media ${device.mobileS} {
+  /* @media ${device.mobileS} {
     width: 85vw;
     min-height: 40vh;
     margin: 5vh auto;
@@ -151,5 +151,5 @@ export const FeaturedBlockWrapper = styled.section`
         line-height: 2rem;
       }
     }
-  }
+  } */
 `

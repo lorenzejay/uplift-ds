@@ -26,9 +26,11 @@ const Hero = ({ title, content, backgroundImage }) => {
         <div className="hero-text">
           <RichTextCustom render={title.raw} />
           <p>{content}</p>
-          <Button>
-            <Link to="/contact-us">Contact Us</Link>
-          </Button>
+          <Link to="/contact-us">
+            <button className="bg-gray-400 text-white rounded-md hover:bg-red-400 transition-all duration-200 ease-in px-3 py-1">
+              Contact Us
+            </button>
+          </Link>
         </div>
         <img
           src={backgroundImage}

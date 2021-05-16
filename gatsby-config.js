@@ -17,6 +17,7 @@ module.exports = {
     twitterUsername: "lorenzejayTech",
   },
   plugins: [
+    "gatsby-plugin-postcss",
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-sass`,
     {

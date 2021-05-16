@@ -10,7 +10,7 @@ const FeaturedGrid = ({ featuredItems, title, darkMode }) => {
   return (
     <FeaturedSectionWrapper darkMode={darkMode}>
       {title && <RichTextCustom render={title.raw} />}
-      <FeaturedGrid3>
+      <FeaturedGrid3 className="flex flex-col justify-center lg:grid lg:grid-cols-3 lg:justify-start">
         {featuredItems.map((item, i) => {
           return (
             <div key={i}>

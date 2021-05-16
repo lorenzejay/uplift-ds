@@ -49,12 +49,12 @@ export const HeroWrapper = styled(BackgroundImage)`
         color: white;
       }
     }
-    button {
+    /* button {
       background: #ea6354;
       a {
         color: white;
       }
-    }
+    } */
     @media ${device.mobileS} {
       height: 100%;
       padding-top: 5%;
@@ -63,13 +63,13 @@ export const HeroWrapper = styled(BackgroundImage)`
       justify-content: center;
       gap: 5vh;
 
-      button {
+      /* button {
         padding: 5px 15px;
         a {
           font-size: 14px;
           text-decoration: none;
         }
-      }
+      } */
       img {
         z-index: 10;
         width: 75%;
@@ -116,12 +116,12 @@ export const HeroWrapper = styled(BackgroundImage)`
       img {
         width: 40%;
       }
-      button {
+      /* button {
         padding: 8px 20px;
         a {
           font-size: 16px;
         }
-      }
+      } */
     }
     @media ${device.laptopL} {
       height: 90vh;
@@ -149,13 +149,13 @@ export const HeroWrapper = styled(BackgroundImage)`
           font-size: 2rem;
           line-height: 2.5rem;
         }
-        button {
+        /* button {
           margin-top: 3vh;
           padding: 10px 30px;
           a {
             font-size: 2rem;
           }
-        }
+        } */
       }
       img {
         width: 25%;
