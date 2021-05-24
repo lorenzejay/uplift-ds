@@ -77,9 +77,9 @@ const BlogHomePage = () => {
       />
 
       <div
-        className="bg-local h-96 bg-no-repeat bg-cover w-full flex items-center justify-center "
+        className="blogheader bg-local h-96  bg-no-repeat  bg-cover w-full flex items-center justify-center "
         style={{
-          backgroundImage: `url(${data.allPrismicBlogHomepage.edges[0].node.data.hero_image.fluid.src})`,
+          backgroundImage: `url(${data.allPrismicBlogHomepage.edges[0].node.data.hero_image.fluid.srcWebp})`,
         }}
         // style={`background-image: url(${data.allPrismicBlogHomepage.edges[0].node.data.hero_image.fluid.srcSet})`}
       >
