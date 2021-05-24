@@ -70,7 +70,7 @@ const htmlSerializer = (type, element, content, children, index) => {
   return null
 }
 
-const RichTextCustom = ({ render }) => {
+const RichTextCustom = ({ render, className }) => {
   return (
     <RichText
       render={render}

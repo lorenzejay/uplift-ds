@@ -33,12 +33,6 @@ export const BlogPreviewGrid = styled.div`
   background: ${({ theme }) => theme.background};
   .blog-preview {
     background: ${({ theme }) => theme.darkContrast};
-    display: flex;
-    gap: 5vw;
-    height: 50vh;
-    width: 65vw;
-    padding: 5%;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     h1,
     p,
@@ -100,6 +94,10 @@ export const BlogPreviewGrid = styled.div`
 
       img {
         width: 35%;
+        margin-right: 1.5rem;
+      }
+      a:hover {
+        color: #ea6354;
       }
     }
   }

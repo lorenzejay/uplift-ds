@@ -1,14 +1,14 @@
 import styled from "styled-components"
 import { device } from "../styles/default"
-import { makeStyles } from "@material-ui/core/styles"
-export const useStyles = makeStyles(theme => ({
-  root: {
-    "& > *": {
-      margin: theme.spacing(1),
-      width: "25ch",
-    },
-  },
-}))
+// import { makeStyles } from "@material-ui/core/styles"
+// export const useStyles = makeStyles(theme => ({
+//   root: {
+//     "& > *": {
+//       margin: theme.spacing(1),
+//       width: "25ch",
+//     },
+//   },
+// }))
 
 export const ContactWrapper = styled.section`
   display: flex;

@@ -20,39 +20,34 @@ module.exports = {
     "gatsby-plugin-postcss",
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-sass`,
-    {
-      resolve: `gatsby-plugin-material-ui`,
-      options: {
-        stylesProvider: {
-          injectFirst: true,
-        },
-      },
-    },
+
     "gatsby-plugin-styled-components",
     {
       resolve: `gatsby-source-prismic`,
       options: {
         repositoryName: `upliftds`,
 
-        linkResolver: ({ node, key, value }) => doc => {
-          // Your link resolver
-          if (doc.type === "category") {
-            return `/category/${doc.uid}`
-          }
+        linkResolver:
+          ({ node, key, value }) =>
+          doc => {
+            // Your link resolver
+            if (doc.type === "category") {
+              return `/category/${doc.uid}`
+            }
 
-          // URL for a product type
-          if (doc.type === "product") {
-            return `/product/${doc.uid}`
-          }
+            // URL for a product type
+            if (doc.type === "product") {
+              return `/product/${doc.uid}`
+            }
 
-          // URL for a page type
-          if (doc.type === "page") {
-            return `/${doc.uid}`
-          }
+            // URL for a page type
+            if (doc.type === "page") {
+              return `/${doc.uid}`
+            }
 
-          // Backup for all other types
-          return "/"
-        },
+            // Backup for all other types
+            return "/"
+          },
         schemas: {
           contact_page: require("./src/schemas/contact_page.json"),
           about: require("./src/schemas/about.json"),
